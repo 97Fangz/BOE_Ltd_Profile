@@ -6,7 +6,7 @@ import { Home } from './pages/Home';
 
 // Add the following line if the module is not exported as the default export
 // import { Home } from './pages/Home';
-import {About} from './pages/About';
+import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Broker from './pages/Broker';
