@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 
 import About from './pages/About';
 import Services from './pages/Services';
-import Contact from './pages/ontact';
+import Contact from './pages/Contact';
 import Broker from './pages/Broker';
 import './App.css';
 
