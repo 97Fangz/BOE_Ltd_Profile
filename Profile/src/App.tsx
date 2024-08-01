@@ -7,6 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Broker from './pages/Broker';
+import Home from './pages/Home'; // Import the Home component
 import './App.css';
 
 const App: React.FC = () => {
@@ -15,7 +16,7 @@ const App: React.FC = () => {
       <div className="App">
         <Header />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Home} /> 
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
           <Route path="/contact" component={Contact} />
@@ -27,4 +28,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App
+export default App;
