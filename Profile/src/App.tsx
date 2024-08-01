@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, git } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import About from './pages/git';
