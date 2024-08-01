@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-Certainly! Let's enhance the UI layout for your "About BOE Limited" section. I'll provide a more visually appealing design using styled components. Below, you'll find an improved version of your `About` component with better styling:
-
-```jsx
-import React from 'react';
-import styled from 'styled-components';
-
 const Section = styled.section`
   padding: 2rem;
   background: #f9f9f9; /* Light gray background */
@@ -42,3 +36,13 @@ const About: React.FC = () => {
     </Section>
   );
 };
+
+export default About;
+```
+
+In this updated version:
+- The section has a light gray background with rounded corners.
+- The text color is darker for better readability.
+- We've added a subtle shadow effect to make the section stand out.
+
+Feel free to adjust the styles further to match your brand identity. 🚚🌟
