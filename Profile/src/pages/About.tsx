@@ -3,13 +3,12 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   padding: 2rem;
-  background: #f4f4f4;
   width:100%;
 `;
 
 const About: React.FC = () => {
   return (
-    <Section>
+    <Section className='min-h-[50vh]'>
       <div className='flex items-start flex-col uppercase'>
       <h1 className='text-4xl text-gray-700'>About</h1>
       <h2 className=' font-semibold text-amber-900 text-4xl'>Our Company</h2>
