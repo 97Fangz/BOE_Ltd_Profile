@@ -21,7 +21,7 @@ const ServiceItem = styled.li`
 const Services: React.FC = () => {
   return (
     <Section>
-      <h2>Our Services</h2>
+      <h2 className='font-bold text-2xl'>Our Services</h2>
       <ServiceList>
         <ServiceItem>Worldwide Freight Transportation</ServiceItem>
         <ServiceItem>Warehousing and Storage Solutions</ServiceItem>

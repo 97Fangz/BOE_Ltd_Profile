@@ -3,16 +3,48 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   padding: 2rem;
-  background: #fff;
+  background: #f4f4f4;
+  width:100%;
 `;
 
 const About: React.FC = () => {
   return (
     <Section>
-      <h2>About BOE Limited</h2>
-      <p>BOE Limited is a leading logistics company based in Kenya, providing top-tier shipment services across the globe. Founded on the principles of reliability and efficiency, we have built a reputation for delivering excellence in logistics and supply chain solutions.</p>
-      <p>Our team includes expert brokers who specialize in handling high-value shipments, ensuring the secure and efficient transport of precious metals like gold. Our Kenyan brokerage team is renowned for their meticulous attention to detail and unparalleled expertise in navigating complex shipment requirements.</p>
-      <p>Our mission is to provide comprehensive logistics solutions that exceed our clients' expectations, ensuring that their goods reach their destinations safely and on time.</p>
+      <div className='flex items-start flex-col uppercase'>
+      <h1 className='text-4xl text-gray-700'>About</h1>
+      <h2 className=' font-semibold text-amber-900 text-4xl'>Our Company</h2>
+      <div className='w-8 h-1 bg-amber-900 mt-1 mb-1'></div>
+      </div>
+      <div className='flex w-[100%] items-start sm:flex-row flex-col justify-center gap-4'>
+      <div >
+          <p>
+          Core Mineral Galore Co., Ltd. is an investment
+holding company mainly engaged in gold mining
+and support small scale artisan miners and its
+subsidiaries, the company operates through
+three departments.
+The Gold Mining Division is mainly engaged in
+gold mining, processing and sales of gold products and other by-products in the people's
+Republic of DR. Congo.
+Minerals Trading Division buys and sells AU and
+other precious stones.
+          </p>   
+      </div>
+      <div>
+        <p>
+        The financial services business segment is
+mainly engaged in the provision of financial
+services in DRC. Congo to equip the small-scale
+artisan miners with basic necessities i.e., medicine, mining trainings, skills and some light
+mining equipment within DRC. Congo.
+Our team has really helped and saved many
+lives who have been using mercury to extract
+gold.
+
+        </p>
+      </div>
+      </div>
+      
     </Section>
   );
 };

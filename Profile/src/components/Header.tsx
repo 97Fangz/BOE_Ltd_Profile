@@ -24,7 +24,10 @@ const NavLink = styled(Link)`
 const Header: React.FC = () => {
   return (
     <Navbar>
-      <h1>BOE Limited</h1>
+    <div className='flex items-center justify-center  gap-2'>
+    <img src="Boelogo.jpeg" width={50}  className=''/>
+    <h1>BOE Limited</h1>
+    </div>
       <div>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About Us</NavLink>
