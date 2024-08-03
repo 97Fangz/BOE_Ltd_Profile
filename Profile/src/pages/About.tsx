@@ -54,7 +54,7 @@ const AboutPage: React.FC = () => {
           </div>
           <div className="flex flex-col items-center mt-8 lg:mt-0">
             <img
-              src="/path/to/gemstones-image.jpg"
+              src="image.jpg"
               alt="Selling minerals (diamonds, gemstones)"
               className="w-48 h-48 object-cover rounded-lg"
             />
