@@ -27,7 +27,8 @@ const AboutPage: React.FC = () => {
                     className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
                     style={{
                       backgroundImage:
-                      <img src="Boelogo.jpeg" width={50} alt="" />                    }}
+                        'url("https://cdn.usegalileo.ai/sdxl10/2867bf59-0204-4381-b622-c32546d2be5e.png")',
+                    }}
                   ></div>
                   <div className="flex flex-col justify-center">
                     <p className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em]">
