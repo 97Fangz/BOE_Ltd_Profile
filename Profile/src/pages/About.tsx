@@ -38,7 +38,7 @@ const AboutPage: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-around mt-8">
           <div className="flex flex-col items-center">
             <img
-              src="image1.jpg"
+              src="image1.jpeg"
               alt="Mining of earth minerals"
               className="w-48 h-48 object-cover rounded-lg"
             />
@@ -46,7 +46,7 @@ const AboutPage: React.FC = () => {
           </div>
           <div className="flex flex-col items-center mt-8 lg:mt-0">
             <img
-              src="/path/to/gold-image.jpg"
+              src="image.jpg"
               alt="Selling minerals (gold)"
               className="w-48 h-48 object-cover rounded-lg"
             />
