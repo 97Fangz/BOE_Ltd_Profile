@@ -16,19 +16,30 @@ const ContactContainer = styled.div`
   gap: 1.5rem;
 `;
 
-const ContactItem = styled.div`
-  background-color: #e6f6e6;
-  padding: 1rem;
-  border-radius: 9999px;
-  display: flex;
+const ContactButton = styled.a`
+  display: inline-flex;
   align-items: center;
-  background-color: #ffd700;
-  color: #0047ab;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
   font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s;
 
-  i {
-    margin-right: 0.5rem;
-    color: #0047ab;
+  &:hover {
+    background-color: #0056b3;
+  }
+
+  &.phone {
+    background-color: #0047ab;
+  }
+
+  &.email {
+    background-color: #28a745;
+  }
+
+  &.tiktok {
+    background-color: #ff2a45;
   }
 `;
 
@@ -46,44 +57,29 @@ const Contact: React.FC = () => {
       </p>
       <h3 className="text-sm font-semibold text-blue-900 mb-4">Contact us via the following:</h3>
       <ContactContainer>
-        <ContactItem>
-          <button
-  class="middle none center w-full rounded-lg bg-pink-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-  data-ripple-light="true">
-  Button
-</button>
-<div class="w-full pt-5 px-4 mb-8 mx-auto ">
-    <div class="text-sm text-gray-700 py-1">
-        Made with <a class="text-gray-700 font-semibold" href="https://www.material-tailwind.com/docs/html/button?ref=tailwindcomponents" target="_blank">Material Tailwind</a> by <a href="https://www.creative-tim.com?ref=tailwindcomponents" class="text-gray-700 font-semibold" target="_blank"> Creative Tim</a>.
-    </div>
-</div>
-
-<!-- stylesheet -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-/>
-
-<!-- Ripple Effect from cdn -->
-<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
-        </ContactItem>
-        <ContactItem>
+        <ContactButton
+          href="tel:+254798877813"
+          className="phone flex items-center space-x-2"
+        >
+          <i className="fa fa-phone"></i>
+          <span>+254798877813, +254715119636</span>
+        </ContactButton>
+        <ContactButton
+          href="mailto:boelimited275@gmail.com"
+          className="email flex items-center space-x-2"
+        >
           <i className="fa-solid fa-envelope"></i>
-          <p>boelimited275@gmail.com</p>
-        </ContactItem>
-        <ContactItem>
+          <span>boelimited275@gmail.com</span>
+        </ContactButton>
+        <ContactButton
+          href="https://www.tiktok.com/@boelimited?_t=8oJpZoCT0bt&_r=1"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tiktok flex items-center space-x-2"
+        >
           <i className="fa-brands fa-tiktok"></i>
-          <p>
-            <a
-              href="https://www.tiktok.com/@boelimited?_t=8oJpZoCT0bt&_r=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-900 hover:underline"
-            >
-              TikTok
-            </a>
-          </p>
-        </ContactItem>
+          <span>TikTok</span>
+        </ContactButton>
       </ContactContainer>
     </Section>
   );

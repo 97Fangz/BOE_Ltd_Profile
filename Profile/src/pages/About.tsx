@@ -1,46 +1,93 @@
+// src/pages/AboutPage.tsx
+
 import React from 'react';
-import styled from 'styled-components';
 
-const Section = styled.section`
-  padding: 3rem 2rem;
-  background: #f0f0f0; /* Slightly lighter gray background */
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
-  max-width: 800px;
-  margin: 2rem auto; /* Center the section */
-`;
-
-const Heading = styled.h2`
-  font-size: 2rem;
-  // color: #2c3e50; /* Dark blue text color */
-  margin-bottom: 1.5rem;
-  text-align: center; /* Center the heading text */
-  padding-bottom: 0.5rem;
-`;
-
-const Paragraph = styled.p`
-  font-size: 1.2rem;
-  color: #555; /* Slightly lighter gray text color */
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  text-align: justify; /* Justify text for a cleaner look */
-`;
-
-const About: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
-    <Section>
-      <Heading className='text-center border-b-2 border-amber-900 w-max mx-auto text-2xl text-amber-900 font-semibold'>About BOE Limited</Heading>
-      <Paragraph>
-        BOE Limited is a leading logistics company based in Kenya, providing top-tier shipment services across the globe. Founded on the principles of reliability and efficiency, we have built a reputation for delivering excellence in logistics and supply chain solutions.
-      </Paragraph>
-      <Paragraph>
-        Our team includes expert brokers who specialize in handling high-value shipments, ensuring the secure and efficient transport of precious metals like gold. Our Kenyan brokerage team is renowned for their meticulous attention to detail and unparalleled expertise in navigating complex shipment requirements.
-      </Paragraph>
-      <Paragraph>
-        Our mission is to provide comprehensive logistics solutions that exceed our clients' expectations, ensuring that their goods reach their destinations safely and on time.
-      </Paragraph>
-    </Section>
+    <div className="bg-gray-100 min-h-screen">
+      {/* Header Section */}
+      <header className="bg-blue-500 text-white py-8">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold">BOE Limited</h1>
+          <p className="mt-2">Brief tagline or mission statement</p>
+        </div>
+      </header>
+
+      {/* About Section */}
+      <section className="container mx-auto py-12 px-4">
+        <div className="flex flex-col lg:flex-row items-center">
+          <div className="w-full lg:w-1/2">
+            <img
+              src="/path/to/founder-image.jpg"
+              alt="Founder Joel Chesiro"
+              className="rounded-full w-32 h-32 mx-auto lg:mx-0"
+            />
+          </div>
+          <div className="w-full lg:w-1/2 lg:pl-8 mt-8 lg:mt-0 text-center lg:text-left">
+            <h2 className="text-2xl font-semibold">About the Company</h2>
+            <p className="mt-4">
+              Brief history of how the company started goes here...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="container mx-auto py-12 px-4">
+        <h2 className="text-2xl font-semibold text-center">Our Services</h2>
+        <div className="flex flex-col lg:flex-row items-center justify-around mt-8">
+          <div className="flex flex-col items-center">
+            <img
+              src="/path/to/mining-image.jpg"
+              alt="Mining of earth minerals"
+              className="w-48 h-48 object-cover rounded-lg"
+            />
+            <p className="mt-4">Mining of earth minerals</p>
+          </div>
+          <div className="flex flex-col items-center mt-8 lg:mt-0">
+            <img
+              src="/path/to/gold-image.jpg"
+              alt="Selling minerals (gold)"
+              className="w-48 h-48 object-cover rounded-lg"
+            />
+            <p className="mt-4">Selling minerals (gold)</p>
+          </div>
+          <div className="flex flex-col items-center mt-8 lg:mt-0">
+            <img
+              src="/path/to/gemstones-image.jpg"
+              alt="Selling minerals (diamonds, gemstones)"
+              className="w-48 h-48 object-cover rounded-lg"
+            />
+            <p className="mt-4">Selling minerals (diamonds, gemstones)</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements Section */}
+      <section className="container mx-auto py-12 px-4 bg-white rounded-lg shadow-md mt-12">
+        <h2 className="text-2xl font-semibold text-center">Key Achievements</h2>
+        <ul className="list-disc list-inside mt-4">
+          <li>Achievement 1</li>
+          <li>Achievement 2</li>
+          <li>Achievement 3</li>
+        </ul>
+      </section>
+
+      {/* Management Team Section */}
+      <section className="container mx-auto py-12 px-4 mt-12">
+        <h2 className="text-2xl font-semibold text-center">Management Team</h2>
+        <div className="flex flex-col items-center mt-8">
+          <img
+            src="/path/to/founder-image.jpg"
+            alt="Founder Joel Chesiro"
+            className="rounded-full w-32 h-32"
+          />
+          <p className="mt-4 font-semibold">Joel Chesiro</p>
+          <p>Founder and CEO</p>
+        </div>
+      </section>
+    </div>
   );
 };
 
-export default About;
+export default AboutPage;
