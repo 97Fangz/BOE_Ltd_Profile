@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Navbar = styled.nav`
-  background: #333;
-  color: white;
+  background: #f4f4f4;
+  color: #222;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,6 @@ const Navbar = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-  color: white;
   text-decoration: none;
   margin: 0 1rem;
 
@@ -24,8 +23,11 @@ const NavLink = styled(Link)`
 const Header: React.FC = () => {
   return (
     <Navbar>
+      <div className='flex items-center justify-center gap-2'>
+        <img src="Boelogo.jpeg" width={50} alt="" />
       <h1>BOE Limited</h1>
-      <div>
+      </div>
+      <div className='text-gray-800'>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/services">Services</NavLink>
