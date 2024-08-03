@@ -26,28 +26,27 @@ const Services: React.FC = () => {
         className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
         >
           <i className='fa fa-globe fa-2x text-amber-900'></i>
-          Worldwide Freight Transportation</ServiceItem>
+          To be a leading mining company on the globe</ServiceItem>
           <ServiceItem 
         className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
         >
-          <i className='fa fa-boxes-packing fa-2x text-amber-900'></i>
-          Warehousing and Storage Solutions</ServiceItem>
-          <ServiceItem 
-        className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
-        >
-          <i className='fa-solid fa-people-roof fa-2x text-amber-900'></i>
-          Supply Chain Management</ServiceItem>
+          <i className='fa-solid fa-spoon fa-2x text-amber-900'></i>
+          Mining of earth minerals
+          </ServiceItem>
+      
           <ServiceItem 
         className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
         >
           <i className="fa-regular fa-heart fa-2x text-amber-900"></i>
-          Specialized Brokerage for High-Value Goods</ServiceItem>
-          <ServiceItem 
-        className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
-        >
-         <i className="fa-solid fa-shield fa-2x text-amber-900"></i>
-          Secure Transport of Precious Metals, including Gold</ServiceItem>
+          To supply the best quality of minerals across the globe
+     </ServiceItem>
+        
       </ServiceList>
+      <div className='flex items-center justify-center gap-7 flex-wrap' >
+      <div className='md:w-1/3'>
+        <img src="" alt="" />
+      </div>
+      </div>
     </Section>
   );
 };
