@@ -39,7 +39,7 @@ const Services: React.FC = () => {
         >
           <i className="fa-regular fa-heart fa-2x text-amber-900"></i>
           To supply the best quality of minerals across the globe
-</ServiceItem>
+     </ServiceItem>
         
       </ServiceList>
     </Section>
