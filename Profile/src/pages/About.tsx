@@ -16,7 +16,6 @@ const AboutPage: React.FC = () => {
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
-    
     <div className="relative flex size-full min-h-screen flex-col bg-[#fcfbf8] group/design-root overflow-x-hidden" style={{ fontFamily: '"Noto Serif", "Noto Sans", sans-serif' }}>
       <div className="layout-container flex h-full grow flex-col">
         <div className="px-40 flex flex-1 justify-center py-5">
