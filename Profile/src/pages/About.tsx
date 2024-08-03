@@ -78,7 +78,7 @@ const AboutPage: React.FC = () => {
         <h2 className="text-2xl font-semibold text-center">Management Team</h2>
         <div className="flex flex-col items-center mt-8">
           <img
-            src="image.jpg"
+            src="image4Joe.jpg"
             alt="Founder Joel Chesiro"
             className="rounded-full w-32 h-32"
           />
