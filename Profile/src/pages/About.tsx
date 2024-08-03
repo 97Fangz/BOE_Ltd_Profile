@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2">
             <img
-              src=".jpg"
+              src="Image4Joe.jpg"
               alt="Founder Joel Chesiro"
               className="rounded-full w-32 h-32 mx-auto lg:mx-0"
             />
