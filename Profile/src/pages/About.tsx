@@ -12,10 +12,9 @@ const Section = styled.section`
 
 const Heading = styled.h2`
   font-size: 2rem;
-  color: #2c3e50; /* Dark blue text color */
+  // color: #2c3e50; /* Dark blue text color */
   margin-bottom: 1.5rem;
   text-align: center; /* Center the heading text */
-  border-bottom: 2px solid #3498db; /* Add a bottom border */
   padding-bottom: 0.5rem;
 `;
 
@@ -30,7 +29,7 @@ const Paragraph = styled.p`
 const About: React.FC = () => {
   return (
     <Section>
-      <Heading>About BOE Limited</Heading>
+      <Heading className='text-center border-b-2 border-amber-900 w-max mx-auto text-2xl text-amber-900 font-semibold'>About BOE Limited</Heading>
       <Paragraph>
         BOE Limited is a leading logistics company based in Kenya, providing top-tier shipment services across the globe. Founded on the principles of reliability and efficiency, we have built a reputation for delivering excellence in logistics and supply chain solutions.
       </Paragraph>
