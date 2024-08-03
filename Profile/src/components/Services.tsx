@@ -42,6 +42,11 @@ const Services: React.FC = () => {
      </ServiceItem>
         
       </ServiceList>
+      <div className='flex items-center justify-center gap-7 flex-wrap' >
+      <div className='md:w-1/3'>
+        <img src="" alt="" />
+      </div>
+      </div>
     </Section>
   );
 };
