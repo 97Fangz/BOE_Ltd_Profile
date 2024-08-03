@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
       <ContactContainer>
         <ContactItem>
           <i className="fa fa-phone"></i>
-          <p>+254798877813,< +254715119636</p>
+          <p>+254798877813,</br> +254715119636</p>
         </ContactItem>
         <ContactItem>
           <i className="fa-solid fa-envelope"></i>
