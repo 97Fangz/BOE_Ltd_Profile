@@ -38,7 +38,7 @@ const AboutPage: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center justify-around mt-8">
           <div className="flex flex-col items-center">
             <img
-              src="/path/to/mining-image.jpg"
+              src="image1.jpg"
               alt="Mining of earth minerals"
               className="w-48 h-48 object-cover rounded-lg"
             />
