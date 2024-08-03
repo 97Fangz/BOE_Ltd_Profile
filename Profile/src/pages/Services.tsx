@@ -21,15 +21,35 @@ const ServiceItem = styled.li`
 const Services: React.FC = () => {
   return (
     <Section>
-      <h2>Our Services</h2>
-      <ServiceList>
-        <ServiceItem>Worldwide Freight Transportation</ServiceItem>
-        <ServiceItem>Warehousing and Storage Solutions</ServiceItem>
-        <ServiceItem>Supply Chain Management</ServiceItem>
-        <ServiceItem>Specialized Brokerage for High-Value Goods</ServiceItem>
-        <ServiceItem>Secure Transport of Precious Metals, including Gold</ServiceItem>
-      </ServiceList>
-    </Section>
+    <h2 className='text-center border-b-2 border-amber-900 w-max mx-auto text-2xl text-amber-900 font-semibold'>Our Services</h2>
+    <ServiceList className='flex items-center justify-center flex-wrap gap-8'>
+      <ServiceItem 
+      className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
+      >
+        <i className='fa fa-globe fa-2x text-amber-900'></i>
+        Worldwide Freight Transportation</ServiceItem>
+        <ServiceItem 
+      className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
+      >
+        <i className='fa fa-boxes-packing fa-2x text-amber-900'></i>
+        Warehousing and Storage Solutions</ServiceItem>
+        <ServiceItem 
+      className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
+      >
+        <i className='fa-solid fa-people-roof fa-2x text-amber-900'></i>
+        Supply Chain Management</ServiceItem>
+        <ServiceItem 
+      className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
+      >
+        <i className="fa-regular fa-heart fa-2x text-amber-900"></i>
+        Specialized Brokerage for High-Value Goods</ServiceItem>
+        <ServiceItem 
+      className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
+      >
+       <i className="fa-solid fa-shield fa-2x text-amber-900"></i>
+        Secure Transport of Precious Metals, including Gold</ServiceItem>
+    </ServiceList>
+  </Section>
   );
 };
 

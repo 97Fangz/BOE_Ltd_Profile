@@ -30,7 +30,7 @@ const Services: React.FC = () => {
           <ServiceItem 
         className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
         >
-          <i className='fa-regular fa-boxes-packing fa-2x text-amber-900'></i>
+          <i className='fa fa-boxes-packing fa-2x text-amber-900'></i>
           Warehousing and Storage Solutions</ServiceItem>
           <ServiceItem 
         className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
