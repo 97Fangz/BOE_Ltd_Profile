@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 interface PricingProps {
   commodity: string;
@@ -17,8 +18,23 @@ interface PricingProps {
   visa: string;
 }
 
-// Remove the unused 'Pricing' component
- const Pricing: React.FC<PricingProps> = ({
+const Container = styled.div`
+  @apply container mx-auto p-6;
+`;
+
+const Section = styled.section`
+  @apply mb-6;
+`;
+
+const Title = styled.h2`
+  @apply text-xl font-semibold;
+`;
+
+const List = styled.ul`
+  @apply list-disc ml-6;
+`;
+
+const PricingPage: React.FC<PricingProps> = ({
   commodity,
   form,
   purity,
@@ -35,10 +51,11 @@ interface PricingProps {
   visa,
 }) => {
   return (
-    <div className="container mx-auto p-6">
+    <Container>
       <h1 className="text-2xl font-bold mb-4">Pricing Details</h1>
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Product Information</h2>
+
+      <Section>
+        <Title>Product Information</Title>
         <p><strong>Commodity:</strong> {commodity}</p>
         <p><strong>Form:</strong> {form}</p>
         <p><strong>Purity:</strong> {purity}</p>
@@ -47,51 +64,51 @@ interface PricingProps {
         <p><strong>Carat:</strong> {carat}</p>
         <p><strong>Quantity:</strong> {quantity}</p>
         <p><strong>Price:</strong> {price}</p>
-      </section>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Payment Terms</h2>
+      <Section>
+        <Title>Payment Terms</Title>
         <p>{paymentTerms}</p>
-      </section>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Agreement Duration</h2>
+      <Section>
+        <Title>Agreement Duration</Title>
         <p>{agreementDuration}</p>
-      </section>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Sales and Delivery Procedure</h2>
-        <ul className="list-disc ml-6">
+      <Section>
+        <Title>Sales and Delivery Procedure</Title>
+        <List>
           {procedure.map((step, index) => (
             <li key={index}>{step}</li>
           ))}
-        </ul>
-      </section>
+        </List>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Required Documentation</h2>
-        <ul className="list-disc ml-6">
+      <Section>
+        <Title>Required Documentation</Title>
+        <List>
           {documentation.map((doc, index) => (
             <li key={index}>{doc}</li>
           ))}
-        </ul>
-      </section>
+        </List>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Fees, Levies, and Duties</h2>
-        <ul className="list-disc ml-6">
+      <Section>
+        <Title>Fees, Levies, and Duties</Title>
+        <List>
           {fees.map((fee, index) => (
             <li key={index}>{fee}</li>
           ))}
-        </ul>
-      </section>
+        </List>
+      </Section>
 
-      <section className="mb-6">
-        <h2 className="text-xl font-semibold">Visa Information</h2>
+      <Section>
+        <Title>Visa Information</Title>
         <p>{visa}</p>
-      </section>
-    </div>
+      </Section>
+    </Container>
   );
 };
 
-export default Prici;
+export default PricingPage;

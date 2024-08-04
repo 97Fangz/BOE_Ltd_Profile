@@ -6,7 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Home from './pages/Home'; // Import the Home component
-import Pricing from './pages/Pricing'
+import PricingPage from './pages/Pricing'
 import './App.css';
 
 const App: React.FC = () => {
