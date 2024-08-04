@@ -48,4 +48,4 @@ const Services: React.FC = () => {
   );
 }
 
-export default Servicesc;
+export default Services;
