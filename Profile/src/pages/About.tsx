@@ -29,17 +29,17 @@ const AboutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About the company</h2>
+            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About the company</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
               BOE is a mineral mining and selling company founded in 2023. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
               high-quality minerals. 
             </p>
-            <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
+            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
               BOE Limited was founded in 1990 by John Smith. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
               integrity. We are committed to providing our customers with the best products and services.
             </p>
-            <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Services</h2>
+            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Services</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
               We offer a wide range of services, including mining and selling minerals such as gold, diamonds, gemstones, and other minerals. We also provide consulting services to
               help our clients maximize the value of their mineral assets.
@@ -64,13 +64,13 @@ const AboutPage: React.FC = () => {
                 ></div>
               </div>
             </div>
-            <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Key achievements</h2>
+            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Key achievements</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
               BOE Limited has achieved many milestones over the years. We have been recognized for our commitment to excellence and innovation. Our products have been used in a
               wide range of applications, from jewelry to electronics. We are proud of our accomplishments and look forward to continuing to serve our customers in the years to
               come.
             </p>
-            <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Management team</h2>
+            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Management team</h2>
             <div className="flex items-center gap-4 bg-[#fcfbf8] px-4 min-h-[72px] py-2">
               <div
                 className="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"

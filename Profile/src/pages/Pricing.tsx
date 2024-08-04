@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   padding: 2rem;
   max-width: 50rem;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: white;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
@@ -65,7 +65,7 @@ const Pricing: React.FC = () => {
     <Container>
       {/* Header */}
       <Header>
-        <Title>Gold Pricing and Sales Procedure</Title>
+        <Title className='text-amber-900'>Gold Pricing and Sales Procedure</Title>
       </Header>
 
       {/* Commodity Details */}
