@@ -17,7 +17,7 @@ interface PricingProps {
   visa: string;
 }
 
-const PricingPage: React.FC<PricingProps> = ({
+const Pricing: React.FC<PricingProps> = ({
   commodity,
   form,
   purity,
@@ -93,4 +93,4 @@ const PricingPage: React.FC<PricingProps> = ({
   );
 };
 
-export default PricingPage;
+export default Prici;
