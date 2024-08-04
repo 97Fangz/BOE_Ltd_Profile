@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
                 <div className="flex gap-4">
                   <div
                     className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
-                    style={{ backgroundImage: 'url("/Image4Joe.jpg")' }}
+                    style={{ backgroundImage: 'url("/image1.jpg")' }}
                   ></div>
                   <div className="flex flex-col justify-center">
                     <p className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em]">Mineral Co.</p>
