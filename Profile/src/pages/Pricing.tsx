@@ -17,7 +17,8 @@ interface PricingProps {
   visa: string;
 }
 
-const Pricing: React.FC<PricingProps> = ({
+// Remove the unused 'Pricing' component
+// const Pricing: React.FC<PricingProps> = ({
   commodity,
   form,
   purity,
