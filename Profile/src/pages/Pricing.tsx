@@ -4,7 +4,8 @@ import styled from 'styled-components';
 // Ensure Tailwind CSS is properly set up in your project
 
 const Container = styled.div`
-  @apply relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden font-sans;
+  @apply relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden;
+  font-family: "Work Sans", "Noto Sans", sans-serif;
 `;
 
 const LayoutContainer = styled.div`
@@ -47,6 +48,10 @@ const TimelineLine = styled.div`
   @apply w-[1.5px] bg-[#e5e3dc] h-4;
 `;
 
+const TimelineCircle = styled.div`
+  @apply size-2 rounded-full bg-[#181611];
+`;
+
 const Pricing: React.FC = () => {
   return (
     <Container>
@@ -55,31 +60,31 @@ const Pricing: React.FC = () => {
           <InnerContent>
             <SectionTitle>Product Information</SectionTitle>
             <InputContainer>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Form" />
               </label>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Purity" />
               </label>
             </InputContainer>
             <InputContainer>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Origin" />
               </label>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Payment method" />
               </label>
             </InputContainer>
             <InputContainer>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Carat" />
               </label>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Quantity" />
               </label>
             </InputContainer>
             <InputContainer>
-              <label>
+              <label className="flex flex-col min-w-40 flex-1">
                 <InputField placeholder="Price" />
               </label>
             </InputContainer>
@@ -99,34 +104,34 @@ const Pricing: React.FC = () => {
             <SectionTitle>Sales and Delivery Procedure</SectionTitle>
             <ProcedureTimeline>
               <TimelinePoint>
-                <div className="size-2 rounded-full bg-[#181611]"></div>
-                <TimelineLine className="grow"></TimelineLine>
+                <TimelineCircle />
+                <TimelineLine className="grow" />
               </TimelinePoint>
               <ProcedureStep>
                 <p className="text-[#181611] text-base font-medium leading-normal">The buyer and seller sign the contract</p>
                 <p className="text-[#887f63] text-base font-normal leading-normal">Day 1</p>
               </ProcedureStep>
               <TimelinePoint>
-                <TimelineLine></TimelineLine>
-                <div className="size-2 rounded-full bg-[#181611]"></div>
-                <TimelineLine className="grow"></TimelineLine>
+                <TimelineLine />
+                <TimelineCircle />
+                <TimelineLine className="grow" />
               </TimelinePoint>
               <ProcedureStep>
                 <p className="text-[#181611] text-base font-medium leading-normal">The buyer pays the seller a 10% deposit, which is deducted from the payment</p>
                 <p className="text-[#887f63] text-base font-normal leading-normal">Day 2</p>
               </ProcedureStep>
               <TimelinePoint>
-                <TimelineLine></TimelineLine>
-                <div className="size-2 rounded-full bg-[#181611]"></div>
-                <TimelineLine className="grow"></TimelineLine>
+                <TimelineLine />
+                <TimelineCircle />
+                <TimelineLine className="grow" />
               </TimelinePoint>
               <ProcedureStep>
                 <p className="text-[#181611] text-base font-medium leading-normal">The seller delivers the goods to the buyer's warehouse, and the buyer pays the seller the balance</p>
                 <p className="text-[#887f63] text-base font-normal leading-normal">Day 3</p>
               </ProcedureStep>
               <TimelinePoint>
-                <TimelineLine></TimelineLine>
-                <div className="size-2 rounded-full bg-[#181611]"></div>
+                <TimelineLine />
+                <TimelineCircle />
               </TimelinePoint>
               <ProcedureStep>
                 <p className="text-[#181611] text-base font-medium leading-normal">The buyer inspects the goods and signs the inspection report</p>
