@@ -22,9 +22,9 @@ const AboutPage: React.FC = () => {
                     style={{ backgroundImage: 'url("/Boelogo.jpeg")' }}
                   ></div>
                   <div className="flex flex-col justify-center">
-                    <p className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em]">Boe Limited.</p>
+                    <p className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em]">Boe Limited</p>
                     <p className="text-[#97864e] text-base font-normal leading-normal">Mining &amp; selling minerals</p>
-                    <p className="text-[#97864e] text-base font-normal leading-normal">Founded in 1990, 100-500 employees</p>
+                    <p className="text-[#97864e] text-base font-normal leading-normal">Founded in 2023</p>
                   </div>
                 </div>
               </div>
