@@ -5,8 +5,8 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import Broker from './pages/Broker';
 import Home from './pages/Home'; // Import the Home component
+import Pric
 import './App.css';
 
 const App: React.FC = () => {
@@ -19,7 +19,6 @@ const App: React.FC = () => {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/broker" element={<Broker />} />
         </Routes>
         <Footer />
       </div>
