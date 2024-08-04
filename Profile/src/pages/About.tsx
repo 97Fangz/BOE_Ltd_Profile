@@ -31,7 +31,7 @@ const AboutPage: React.FC = () => {
             </div>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About the company</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Mineral Co. is a mineral mining and selling company founded in 1990. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
+              BOE is a mineral mining and selling company founded in 1. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
               high-quality minerals. Our company has 100-500 employees and is headquartered in San Francisco, CA.
             </p>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
