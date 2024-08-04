@@ -66,7 +66,7 @@ const AboutPage: React.FC = () => {
             </div>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Key achievements</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE LIM has achieved many milestones over the years. We have been recognized for our commitment to excellence and innovation. Our products have been used in a
+              BOE Limited has achieved many milestones over the years. We have been recognized for our commitment to excellence and innovation. Our products have been used in a
               wide range of applications, from jewelry to electronics. We are proud of our accomplishments and look forward to continuing to serve our customers in the years to
               come.
             </p>
