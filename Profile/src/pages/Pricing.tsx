@@ -1,165 +1,94 @@
 import React from 'react';
-import styled from 'styled-components';
-
-// Ensure Tailwind CSS is properly set up in your project
-
-const Container = styled.div`
-  @apply relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden;
-  font-family: "Work Sans", "Noto Sans", sans-serif;
-`;
-
-const LayoutContainer = styled.div`
-  @apply flex h-full grow flex-col;
-`;
-
-const ContentContainer = styled.div`
-  @apply px-40 flex flex-1 justify-center py-5;
-`;
-
-const InnerContent = styled.div`
-  @apply flex flex-col max-w-[960px] flex-1;
-`;
-
-const SectionTitle = styled.h3`
-  @apply text-[#181611] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4;
-`;
-
-const InputContainer = styled.div`
-  @apply flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3;
-`;
-
-const InputField = styled.input`
-  @apply form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#181611] focus:outline-0 focus:ring-0 border-none bg-[#f4f3f0] focus:border-none h-14 placeholder:text-[#887f63] p-4 text-base font-normal leading-normal;
-`;
-
-const ProcedureStep = styled.div`
-  @apply flex flex-1 flex-col py-3;
-`;
-
-const ProcedureTimeline = styled.div`
-  @apply grid grid-cols-[40px_1fr] gap-x-2 px-4;
-`;
-
-const TimelinePoint = styled.div`
-  @apply flex flex-col items-center gap-1;
-`;
-
-const TimelineLine = styled.div`
-  @apply w-[1.5px] bg-[#e5e3dc] h-4;
-`;
-
-const TimelineCircle = styled.div`
-  @apply size-2 rounded-full bg-[#181611];
-`;
+import './App.css'; // Assuming you have Tailwind CSS setup in App.css
 
 const Pricing: React.FC = () => {
   return (
-    <Container>
-      <LayoutContainer>
-        <ContentContainer>
-          <InnerContent>
-            <SectionTitle>Product Information</SectionTitle>
-            <InputContainer>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Form" />
-              </label>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Purity" />
-              </label>
-            </InputContainer>
-            <InputContainer>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Origin" />
-              </label>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Payment method" />
-              </label>
-            </InputContainer>
-            <InputContainer>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Carat" />
-              </label>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Quantity" />
-              </label>
-            </InputContainer>
-            <InputContainer>
-              <label className="flex flex-col min-w-40 flex-1">
-                <InputField placeholder="Price" />
-              </label>
-            </InputContainer>
+    <div className="p-8 max-w-4xl mx-auto bg-white shadow-lg rounded-lg">
+      {/* Header */}
+      <header className="text-center mb-8">
+        <h1 className="text-3xl font-bold">Gold Pricing and Sales Procedure</h1>
+      </header>
 
-            <SectionTitle>Payment Terms</SectionTitle>
-            <p className="text-[#181611] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Payment will be made in the form of a wire transfer to the Seller's bank account within 3 business days after the Buyer has received the goods and signed the
-              inspection report. The Buyer shall not withhold any payment due to the Seller.
-            </p>
+      {/* Commodity Details */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold">Commodity Details</h2>
+        <ul className="list-disc ml-6 mt-4">
+          <li><strong>Commodity:</strong> AU (Gold Dory Bar)</li>
+          <li><strong>Purity:</strong> 96%+</li>
+          <li><strong>Origin:</strong> Mali</li>
+          <li><strong>Carat:</strong> 22+</li>
+          <li><strong>Quantity:</strong> 25kg to 500kg monthly delivery</li>
+          <li><strong>Price:</strong> $55,000/kg</li>
+        </ul>
+      </section>
 
-            <SectionTitle>Agreement Duration</SectionTitle>
-            <p className="text-[#181611] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              This Agreement shall be effective as of the date first above written and shall continue in full force and effect until such time as all obligations of the Parties
-              have been fulfilled or otherwise terminated pursuant to the terms of this Agreement.
-            </p>
+      {/* Pricing Information */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold">Pricing Information</h2>
+        <p className="mt-4">
+          <strong>Payment Terms:</strong> Wire Transfer
+        </p>
+        <p className="mt-4">
+          <strong>Agreement Duration:</strong> One Year with Rolls and Extensions
+        </p>
+      </section>
 
-            <SectionTitle>Sales and Delivery Procedure</SectionTitle>
-            <ProcedureTimeline>
-              <TimelinePoint>
-                <TimelineCircle />
-                <TimelineLine className="grow" />
-              </TimelinePoint>
-              <ProcedureStep>
-                <p className="text-[#181611] text-base font-medium leading-normal">The buyer and seller sign the contract</p>
-                <p className="text-[#887f63] text-base font-normal leading-normal">Day 1</p>
-              </ProcedureStep>
-              <TimelinePoint>
-                <TimelineLine />
-                <TimelineCircle />
-                <TimelineLine className="grow" />
-              </TimelinePoint>
-              <ProcedureStep>
-                <p className="text-[#181611] text-base font-medium leading-normal">The buyer pays the seller a 10% deposit, which is deducted from the payment</p>
-                <p className="text-[#887f63] text-base font-normal leading-normal">Day 2</p>
-              </ProcedureStep>
-              <TimelinePoint>
-                <TimelineLine />
-                <TimelineCircle />
-                <TimelineLine className="grow" />
-              </TimelinePoint>
-              <ProcedureStep>
-                <p className="text-[#181611] text-base font-medium leading-normal">The seller delivers the goods to the buyer's warehouse, and the buyer pays the seller the balance</p>
-                <p className="text-[#887f63] text-base font-normal leading-normal">Day 3</p>
-              </ProcedureStep>
-              <TimelinePoint>
-                <TimelineLine />
-                <TimelineCircle />
-              </TimelinePoint>
-              <ProcedureStep>
-                <p className="text-[#181611] text-base font-medium leading-normal">The buyer inspects the goods and signs the inspection report</p>
-                <p className="text-[#887f63] text-base font-normal leading-normal">Day 4</p>
-              </ProcedureStep>
-            </ProcedureTimeline>
+      {/* Sales & Delivery Procedure */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold">Sales & Delivery Procedure</h2>
+        <ol className="list-decimal ml-6 mt-4 space-y-2">
+          <li>
+            We send a letter of invitation and a Visa to the buyer. Buyer then moves to Mali, if he wants the transactions to happen in his country.
+          </li>
+          <li>
+            Seller provides the quantity of Gold requested to the Refinery. Buyer and Seller conduct assay at Refinery.
+          </li>
+          <li>
+            Seller prepares the export documents. Buyer pays export taxes, which are 7% of the government fixed price ($60,000/kg).
+          </li>
+          <li>
+            Seller provides Buyer with a collateral worth the export tax amount paid. Collateral is returned to seller after the transaction is completed.
+          </li>
+          <li>
+            Seller’s representatives accompany the buyer with the goods to the final testing destination.
+          </li>
+          <li>
+            After the final test, Buyer pays the remaining 93% of the full amount by bank transfer within 48 hours. The 7% paid as taxes will be deducted from the price of the goods after the final test.
+          </li>
+        </ol>
+      </section>
 
-            <SectionTitle>Required Documentation</SectionTitle>
-            <p className="text-[#181611] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              The Seller shall provide the Buyer with the following documents within 3 working days after the delivery of the goods: 1. Original invoice; 2. Certificate of origin;
-              3. Packing list; 4. Certificate of quality and weight issued by a third-party testing agency; 5. Certificate of ownership; 6. Export customs declaration form.
-            </p>
+      {/* Documentation */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold">Documentation</h2>
+        <ul className="list-disc ml-6 mt-4">
+          <li>Certificate of origin</li>
+          <li>Certificate of ownership</li>
+          <li>Assay report</li>
+          <li>Signed commercial invoice</li>
+          <li>Certificate of insurance</li>
+          <li>Custom duties and tax clearance certificates</li>
+          <li>Certificate of non-criminal origin</li>
+          <li>Certificate of intention of exportation</li>
+          <li>Full set Airway Bill, marked “Air Freight Prepaid”</li>
+          <li>Type of airline, Flight number and date of arrival (ETD & ETA)</li>
+        </ul>
+      </section>
 
-            <SectionTitle>Fees, Levies, and Duties</SectionTitle>
-            <p className="text-[#181611] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              The Buyer shall be responsible for all taxes, fees, levies, and duties associated with the importation of the goods. The Buyer shall pay the Seller an additional 10%
-              of the purchase price to cover the Seller's administrative expenses.
-            </p>
+      {/* Fees, Levies, and Duties */}
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold">Fees, Levies, and Duties</h2>
+        <ul className="list-disc ml-6 mt-4">
+          <li>Buyer is responsible for government levies, taxes, export duties, insurance, and freight.</li>
+          <li>Buyer is responsible for Customs Clearance and all expenses related to clearance and transportation of merchandise to Refinery in the destination of Buyer’s choice.</li>
+        </ul>
+      </section>
 
-            <SectionTitle>Visa Information</SectionTitle>
-            <p className="text-[#181611] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              The Seller's representative shall obtain a business visa from the relevant authorities prior to visiting the Buyer's location. The Buyer shall be responsible for all
-              costs associated with obtaining the visa, including but not limited to application fees, processing fees, and travel expenses.
-            </p>
-          </InnerContent>
-        </ContentContainer>
-      </LayoutContainer>
-    </Container>
+      {/* Footer */}
+      <footer className="text-center mt-8">
+        <p className="text-sm text-gray-600">For more information, please contact us.</p>
+      </footer>
+    </div>
   );
 };
 
