@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
-import PricingPage from './pages/Pricing';
+import Pricing from './pages/Pricing';
 import Home from './pages/Home';
 import './App.css';
 
@@ -18,7 +18,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
