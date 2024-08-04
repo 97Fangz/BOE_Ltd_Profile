@@ -18,7 +18,7 @@ interface PricingProps {
 }
 
 // Remove the unused 'Pricing' component
-// const Pricing: React.FC<PricingProps> = ({
+ const Pricing: React.FC<PricingProps> = ({
   commodity,
   form,
   purity,
