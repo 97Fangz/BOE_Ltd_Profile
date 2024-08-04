@@ -60,7 +60,7 @@ const Footer = styled.footer`
   color: #4a5568;
 `;
 
-const Pricinge: React.FC = () => {
+const Pricing: React.FC = () => {
   return (
     <Container>
       {/* Header */}
