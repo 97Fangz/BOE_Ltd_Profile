@@ -31,12 +31,12 @@ const AboutPage: React.FC = () => {
             </div>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About the company</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE is a mineral mining and selling company founded in 1. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
-              high-quality minerals. Our company has 100-500 employees and is headquartered in San Francisco, CA.
+              BOE is a mineral mining and selling company founded in 2023. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
+              high-quality minerals. 
             </p>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Mineral Co. was founded in 1990 by John Smith. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
+              BOE Limited was founded in 1990 by John Smith. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
               integrity. We are committed to providing our customers with the best products and services.
             </p>
             <h2 className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Services</h2>
