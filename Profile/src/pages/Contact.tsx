@@ -31,19 +31,19 @@ const ContactButton = styled.a`
   }
 
   &.phone {
-    background-color: #0047ab;
+    background-color: #28a745; /* Green */
   }
 
   &.email {
-    background-color: #28a745;
+    background-color: #ffcc00; /* Yellow */
   }
 
   &.tiktok {
-    background-color: #ff2a45;
+    background-color: #000000; /* Black */
   }
 
   &.location {
-    background-color: #ffcc00;
+    background-color: #ff2a45; /* Red */
   }
 `;
 
