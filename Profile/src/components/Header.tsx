@@ -76,9 +76,7 @@ const Header: React.FC = () => {
             <NavLink 
               to="/services"
               className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""}`}>
-              Services
-              <i className=""></i>
-            </NavLink>
+              Services avLink>
             <NavLink 
               to="/contact"
               className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
