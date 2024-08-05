@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
             </p>
             <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
             <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE Limited was founded in 1990 by John Smith. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
+              BOE Limited was founded in 2023 by Joel Chesiro. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
               integrity. We are committed to providing our customers with the best products and services.
             </p>
             <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Services</h2>
