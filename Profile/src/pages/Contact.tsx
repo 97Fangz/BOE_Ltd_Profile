@@ -93,6 +93,15 @@ const Contact: React.FC = () => {
           <i className="fa-solid fa-location-dot"></i>
           <span>Mali Location</span>
         </ContactButton>
+        <ContactButton
+          href="https://www.google.com/maps/place/Kenya"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="location flex items-center space-x-2"
+        >
+          <i className="fa-solid fa-location-dot"></i>
+          <span>Kenya Location</span>
+        </ContactButton>
       </ContactContainer>
     </Section>
   );
