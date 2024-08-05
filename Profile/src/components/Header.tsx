@@ -57,7 +57,7 @@ const Header: React.FC = () => {
         <i className='fa fa-bars cursor-pointer fa-2x text-gray-800'></i>
       </div>
       {open && (
-        <div className='absolute border-2 transition-all duration-150 ease-in-out border-amber-300 w-[300px] right-0 top-0 mt-6 rounded mr-3 h-[50vh] bg-amber-100'>
+        <div className='absolute border-2 z-[999] transition-all duration-150 ease-in-out border-amber-300 w-[300px] right-0 top-0 mt-6 rounded mr-3 h-[50vh] bg-amber-100'>
           <i
             onClick={() => setIsOpen(false)}
             className='fa fa-times cursor-pointer absolute mr-2 mt-2 top-0 fa-2x right-0'></i>

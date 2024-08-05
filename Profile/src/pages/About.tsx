@@ -2,21 +2,21 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-[#fcfbf8] group/design-root overflow-x-hidden" style={{ fontFamily: '"Noto Serif", "Noto Sans", sans-serif' }}>
+    <div className="relative flex size-full w-full  min-h-screen flex-col bg-[#fcfbf8]  overflow-x-hidden" style={{ fontFamily: '"Noto Serif", "Noto Sans", sans-serif' }}>
       <div className="layout-container flex h-full grow flex-col">
-        <div className="px-40 flex flex-1 justify-center py-5">
+        <div className="sm:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div className="@container">
-              <div className="@[480px]:px-4 @[480px]:py-3">
+            <div className="">
+              <div className="">
                 <div
-                  className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-[#fcfbf8] @[480px]:rounded-xl min-h-[218px]"
+                  className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-[#fcfbf8]  min-h-[218px]"
                   style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/a7a90a0a-c25c-4860-8df3-e80e44a61973.png")' }}
                 ></div>
               </div>
             </div>
             <div className="flex p-4 @container">
-              <div className="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
-                <div className="flex gap-4">
+              <div className="flex w-full flex-col gap-4 ">
+                <div className="flex sm:flex-row flex-col gap-4">
                   <div
                     className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
                     style={{ backgroundImage: 'url("/Boelogo.jpeg")' }}

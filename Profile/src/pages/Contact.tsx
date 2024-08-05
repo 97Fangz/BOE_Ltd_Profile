@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
         you with all your logistics needs, including the secure shipment of
         precious metals like gold.
       </p>
-      <h3 className="text-sm font-semibold text-blue-900 mb-4">Contact us via the following:</h3>
+      <h3 className="text-sm font-semibold text-gray-700 mb-4">Contact us via the following:</h3>
       <ContactContainer>
         <ContactButton
           href="tel:+254798877813"

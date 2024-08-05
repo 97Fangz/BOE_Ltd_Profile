@@ -3,8 +3,9 @@ import React from 'react';
 const Services: React.FC = () => {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-[#fff] dark group/design-root overflow-x-hidden" style={{ fontFamily: 'Inter, "Noto Sans", sans-serif' }}>
+      <h1 className='mx-auto mt-7 text-xl font-semibold text-amber-900 border-b-2 border-amber-900'>Our Services</h1>
       <div className="layout-container flex h-full grow flex-col">
-        <div className="px-40 flex flex-1 justify-center py-5">
+        <div className="sm:px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
             <h2 className="text-white tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-5">Our Services</h2>
             <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
