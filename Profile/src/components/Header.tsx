@@ -36,8 +36,9 @@ const Header: React.FC = () => {
         </NavLink>
         <NavLink 
           to="/services"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""}`}>
+          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
           Services
+          <i className="fa-solid fa-concierge-bell"></i>
         </NavLink>
         <NavLink 
           to="/contact"
@@ -75,8 +76,9 @@ const Header: React.FC = () => {
             </NavLink>
             <NavLink 
               to="/services"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""}`}>
+              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
               Services
+              <i className="fa-solid fa-concierge-bell"></i>
             </NavLink>
             <NavLink 
               to="/contact"
