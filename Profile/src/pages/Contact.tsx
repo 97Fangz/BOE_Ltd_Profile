@@ -41,6 +41,10 @@ const ContactButton = styled.a`
   &.tiktok {
     background-color: #ff2a45;
   }
+
+  &.location {
+    background-color: #ffcc00;
+  }
 `;
 
 const Contact: React.FC = () => {
@@ -79,6 +83,15 @@ const Contact: React.FC = () => {
         >
           <i className="fa-brands fa-tiktok"></i>
           <span>TikTok</span>
+        </ContactButton>
+        <ContactButton
+          href="https://www.google.com/maps/place/Mali"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="location flex items-center space-x-2"
+        >
+          <i className="fa-solid fa-location-dot"></i>
+          <span>Mali Location</span>
         </ContactButton>
       </ContactContainer>
     </Section>
