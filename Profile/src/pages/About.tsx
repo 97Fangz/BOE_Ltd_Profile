@@ -8,8 +8,7 @@ const PageContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const HeroSection = styled.div`
-  background-image: url("https://cdn.usegalileo.ai/sdxl10/a7a90a0a-c25c-4860-8df3-e80e44a61973.png");
+ background-image: url("/l");
   background-size: cover;
   background-position: center;
   height: 250px;
