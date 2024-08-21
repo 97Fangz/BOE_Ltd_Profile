@@ -8,7 +8,7 @@ const PageContainer = styled.div`
   overflow-x: hidden;
 `;
 
- background-image: url("/l");
+ background-image: url("/Boelogo");
   background-size: cover;
   background-position: center;
   height: 250px;
