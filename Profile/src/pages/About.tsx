@@ -1,90 +1,143 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const PageContainer = styled.div`
+  font-family: "Noto Serif", "Noto Sans", sans-serif;
+  background-color: #fcfbf8;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+`;
+
+const HeroSection = styled.div`
+  background-image: url("https://cdn.usegalileo.ai/sdxl10/a7a90a0a-c25c-4860-8df3-e80e44a61973.png");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+`;
+
+const ContentSection = styled.section`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+`;
+
+const SectionTitle = styled.h2`
+  color: #1b180e;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f4a261;
+  padding-bottom: 0.5rem;
+`;
+
+const SectionText = styled.p`
+  color: #1b180e;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+`;
+
+const ImageGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+`;
+
+const ImageItem = styled.div`
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+`;
+
+const TeamSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #fcfbf8;
+  padding: 1rem;
+  border-radius: 8px;
+`;
+
+const TeamImage = styled.div`
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+`;
+
+const TeamText = styled.div`
+  flex: 1;
+`;
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="relative flex size-full w-full  min-h-screen flex-col bg-[#fcfbf8]  overflow-x-hidden" style={{ fontFamily: '"Noto Serif", "Noto Sans", sans-serif' }}>
-      <div className="layout-container flex h-full grow flex-col">
-        <div className="sm:px-40 flex flex-1 justify-center py-5">
-          <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div className="">
-              <div className="">
-                <div
-                  className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-[#fcfbf8]  min-h-[218px]"
-                  style={{ backgroundImage: 'url("https://cdn.usegalileo.ai/sdxl10/a7a90a0a-c25c-4860-8df3-e80e44a61973.png")' }}
-                ></div>
-              </div>
-            </div>
-            <div className="flex p-4 @container">
-              <div className="flex w-full flex-col gap-4 ">
-                <div className="flex sm:flex-row flex-col gap-4">
-                  <div
-                    className="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
-                    style={{ backgroundImage: 'url("/Boelogo.jpeg")' }}
-                  ></div>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-[#1b180e] text-[22px] font-bold leading-tight tracking-[-0.015em]">Boe Limited</p>
-                    <p className="text-[#97864e] text-base font-normal leading-normal">Mining &amp; selling minerals</p>
-                    <p className="text-[#97864e] text-base font-normal leading-normal">Founded in 2023</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About the company</h2>
-            <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE is a mineral mining and selling company founded in 2023. We mine and sell gold, diamonds, gemstones, and other minerals. We are a trusted source for
-              high-quality minerals. 
-            </p>
-            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Brief history</h2>
-            <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE Limited was founded in 2023 by Joel Chesiro. Since then, we have become a leading provider of high-quality minerals. We have a reputation for excellence and
-              integrity. We are committed to providing our customers with the best products and services.
-            </p>
-            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Services</h2>
-            <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              We offer a wide range of services, including mining and selling minerals such as gold, diamonds, gemstones, and other minerals. We also provide consulting services to
-              help our clients maximize the value of their mineral assets.
-            </p>
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div className="flex flex-col gap-3">
-                <div
-                  className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style={{ backgroundImage: 'url("/image1.jpeg")' }}
-                ></div>
-              </div>
-              <div className="flex flex-col gap-3">
-                <div
-                  className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style={{ backgroundImage: 'url("/image2.jpeg")' }}
-                ></div>
-              </div>
-              <div className="flex flex-col gap-3">
-                <div
-                  className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                  style={{ backgroundImage: 'url("/image3.jpeg")' }}
-                ></div>
-              </div>
-            </div>
-            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Key achievements</h2>
-            <p className="text-[#1b180e] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              BOE Limited has achieved many milestones over the years. We have been recognized for our commitment to excellence and innovation. Our products have been used in a
-              wide range of applications, from jewelry to electronics. We are proud of our accomplishments and look forward to continuing to serve our customers in the years to
-              come.
-            </p>
-            <h2 className="text-amber-900 text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Management team</h2>
-            <div className="flex items-center gap-4 bg-[#fcfbf8] px-4 min-h-[72px] py-2">
-              <div
-                className="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style={{ backgroundImage: 'url("/Image4Joe.jpg")' }}
-              ></div>
-              <div className="flex flex-col justify-center">
-                <p className="text-[#1b180e] text-base font-medium leading-normal line-clamp-1">Joel Chesiro</p>
-                <p className="text-[#97864e] text-sm font-normal leading-normal line-clamp-2">Founder and CEO</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <PageContainer>
+      <HeroSection>
+        <h1>About Us</h1>
+      </HeroSection>
+      <ContentSection>
+        <SectionTitle>About the Company</SectionTitle>
+        <SectionText>
+          BOE Limited is a premier mineral mining and selling company founded in 2023. Specializing in gold, diamonds, gemstones, and other minerals, we are a trusted source for high-quality minerals.
+        </SectionText>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Brief History</SectionTitle>
+        <SectionText>
+          Founded in 2023 by Joel Chesiro, BOE Limited has quickly established itself as a leading provider of high-quality minerals. Known for our commitment to excellence and integrity, we strive to offer the best products and services to our clients.
+        </SectionText>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Our Services</SectionTitle>
+        <SectionText>
+          We provide a comprehensive range of services including the mining and sale of gold, diamonds, gemstones, and other minerals. Our consulting services help clients maximize the value of their mineral assets.
+        </SectionText>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Gallery</SectionTitle>
+        <ImageGrid>
+          <ImageItem style={{ backgroundImage: 'url("/image1.jpeg")' }} />
+          <ImageItem style={{ backgroundImage: 'url("/image2.jpeg")' }} />
+          <ImageItem style={{ backgroundImage: 'url("/image3.jpeg")' }} />
+        </ImageGrid>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Key Achievements</SectionTitle>
+        <SectionText>
+          BOE Limited has achieved numerous milestones, recognized for excellence and innovation. Our products are used across various applications, including jewelry and electronics. We are proud of our accomplishments and look forward to continuing to serve our customers.
+        </SectionText>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Management Team</SectionTitle>
+        <TeamSection>
+          <TeamImage style={{ backgroundImage: 'url("/Image4Joe.jpg")' }} />
+          <TeamText>
+            <p className="text-[#1b180e] text-base font-medium leading-normal">Joel Chesiro</p>
+            <p className="text-[#97864e] text-sm font-normal leading-normal">Founder</p>
+          </TeamText>
+        </TeamSection>
+      </ContentSection>
+    </PageContainer>
   );
 };
 
