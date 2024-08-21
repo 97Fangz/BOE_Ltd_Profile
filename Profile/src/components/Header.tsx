@@ -58,6 +58,7 @@ const Header: React.FC = () => {
   <span className="fs-5 fw-bold me-2"><i className="fa fa-phone-alt me-2"></i>Call Us:</span>
   <span className="fs-5 fw-bold">+012 345 6789</span>
 </div>
+ 
       <div className='block md:hidden' onClick={() => setIsOpen(true)}>
         <i className='fa fa-bars cursor-pointer fa-2x text-gray-800'></i>
       </div>
