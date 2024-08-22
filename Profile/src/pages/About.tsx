@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Container for the entire page
 const PageContainer = styled.div`
   font-family: "Noto Serif", "Noto Sans", sans-serif;
   background-color: #fcfbf8;
@@ -8,6 +9,7 @@ const PageContainer = styled.div`
   overflow-x: hidden;
 `;
 
+// Hero section for page title or background image
 const HeroSection = styled.div`
   background-image: url("/Boelogo.jpeg");
   background-size: cover;
@@ -28,6 +30,7 @@ const HeroSection = styled.div`
   }
 `;
 
+// Main content section container
 const ContentSection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
@@ -38,6 +41,7 @@ const ContentSection = styled.section`
   margin-bottom: 2rem;
 `;
 
+// Title for each section
 const SectionTitle = styled.h2`
   color: #1b180e;
   font-size: 1.75rem;
@@ -47,6 +51,7 @@ const SectionTitle = styled.h2`
   padding-bottom: 0.5rem;
 `;
 
+// Paragraph text for sections
 const SectionText = styled.p`
   color: #1b180e;
   font-size: 1rem;
@@ -54,6 +59,7 @@ const SectionText = styled.p`
   margin-bottom: 1.5rem;
 `;
 
+// Grid layout for images
 const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -61,6 +67,7 @@ const ImageGrid = styled.div`
   margin-bottom: 2rem;
 `;
 
+// Individual image item in grid
 const ImageItem = styled.div`
   background-size: cover;
   background-position: center;
@@ -68,77 +75,177 @@ const ImageItem = styled.div`
   border-radius: 8px;
 `;
 
-const TeamSection = styled.div`
+// Container for contact information (e.g., WhatsApp, Phone, Email)
+const ContactInfoSection = styled.div`
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: #fcfbf8;
-  padding: 1rem;
-  border-radius: 8px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 `;
 
-const TeamImage = styled.div`
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
+// Individual contact info card
+const ContactCard = styled.div`
+  flex: 1 1 300px;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+// Icon wrapper for contact icons (e.g., WhatsApp, Email)
+const IconWrapper = styled.div`
   width: 70px;
   height: 70px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+
+  i {
+    font-size: 2rem;
+  }
 `;
 
-const TeamText = styled.div`
-  flex: 1;
+// Button styling for contact actions
+const ContactButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  i {
+    margin-left: 0.5rem;
+  }
 `;
 
-const AboutPage: React.FC = () => {
+// Specific styles for different contact buttons
+const WhatsAppButton = styled(ContactButton)`
+  background-color: #25d366;
+  &:hover {
+    background-color: #1ebe54;
+  }
+`;
+
+const PhoneButton = styled(ContactButton)`
+  background-color: #28a745;
+  &:hover {
+    background-color: #1e7e34;
+  }
+`;
+
+const EmailButton = styled(ContactButton)`
+  background-color: #ffcc00;
+  &:hover {
+    background-color: #e0b800;
+  }
+`;
+
+const TiktokButton = styled(ContactButton)`
+  background-color: #000000;
+  &:hover {
+    background-color: #e60023;
+  }
+`;
+
+const LocationButton = styled(ContactButton)`
+  background-color: #ff2a45;
+  &:hover {
+    background-color: #cc1f33;
+  }
+`;
+
+const ContactPage: React.FC = () => {
   return (
     <PageContainer>
       <HeroSection>
-        <h1>About Us</h1>
+        <h1>Contact Us</h1>
       </HeroSection>
+
       <ContentSection>
-        <SectionTitle>About the Company</SectionTitle>
+        <SectionTitle>Get in Touch</SectionTitle>
         <SectionText>
-          BOE Limited is a premier mineral mining and selling company founded in 2023. Specializing in gold, diamonds, gemstones, and other minerals, we are a trusted source for high-quality minerals.
+          We are here to assist you with any inquiries or concerns you may have. Feel free to reach out to us through any of the following channels.
         </SectionText>
       </ContentSection>
-      <ContentSection>
-        <SectionTitle>Brief History</SectionTitle>
-        <SectionText>
-          Founded in 2023 by Joel Chesiro, BOE Limited has quickly established itself as a leading provider of high-quality minerals. Known for our commitment to excellence and integrity, we strive to offer the best products and services to our clients.
-        </SectionText>
-      </ContentSection>
-      <ContentSection>
-        <SectionTitle>Our Services</SectionTitle>
-        <SectionText>
-          We provide a comprehensive range of services including the mining and sale of gold, diamonds, gemstones, and other minerals. Our consulting services help clients maximize the value of their mineral assets.
-        </SectionText>
-      </ContentSection>
-      <ContentSection>
-        <SectionTitle>Gallery</SectionTitle>
-        <ImageGrid>
-          <ImageItem style={{ backgroundImage: 'url("/image1.jpeg")' }} />
-          <ImageItem style={{ backgroundImage: 'url("/image2.jpeg")' }} />
-          <ImageItem style={{ backgroundImage: 'url("/image3.jpeg")' }} />
-        </ImageGrid>
-      </ContentSection>
-      <ContentSection>
-        <SectionTitle>Key Achievements</SectionTitle>
-        <SectionText>
-          BOE Limited has achieved numerous milestones, recognized for excellence and innovation. Our products are used across various applications, including jewelry and electronics. We are proud of our accomplishments and look forward to continuing to serve our customers.
-        </SectionText>
-      </ContentSection>
-      <ContentSection>
-        <SectionTitle>Management Team</SectionTitle>
-        <TeamSection>
-          <TeamImage style={{ backgroundImage: 'url("/Image4Joe.jpg")' }} />
-          <TeamText>
-            <p className="text-[#1b180e] text-base font-medium leading-normal">Joel Chesiro</p>
-            <p className="text-[#97864e] text-sm font-normal leading-normal">Founder</p>
-          </TeamText>
-        </TeamSection>
-      </ContentSection>
+
+      <ContactInfoSection>
+        <ContactCard>
+          <IconWrapper>
+            <i className="fa-brands fa-whatsapp" style={{ color: '#25d366' }}></i>
+          </IconWrapper>
+          <h4>WhatsApp</h4>
+          <p>+254798877813</p>
+          <WhatsAppButton href="https://wa.me/254798877813" target="_blank" rel="noopener noreferrer">
+            Chat Now <i className="fa fa-arrow-right"></i>
+          </WhatsAppButton>
+        </ContactCard>
+
+        <ContactCard>
+          <IconWrapper>
+            <i className="fa fa-phone" style={{ color: '#28a745' }}></i>
+          </IconWrapper>
+          <h4>Phone Number</h4>
+          <p>+254798877813</p>
+          <p>+254715119636</p>
+          <PhoneButton href="tel:+254798877813">
+            Call Now <i className="fa fa-arrow-right"></i>
+          </PhoneButton>
+        </ContactCard>
+
+        <ContactCard>
+          <IconWrapper>
+            <i className="fa fa-envelope-open" style={{ color: '#ffcc00' }}></i>
+          </IconWrapper>
+          <h4>Email Address</h4>
+          <p>boelimited275@gmail.com</p>
+          <EmailButton href="mailto:boelimited275@gmail.com">
+            Email Now <i className="fa fa-arrow-right"></i>
+          </EmailButton>
+        </ContactCard>
+
+        <ContactCard>
+          <IconWrapper>
+            <i className="fab fa-tiktok" style={{ color: '#111111' }}></i>
+          </IconWrapper>
+          <h4>Follow Us on TikTok</h4>
+          <TiktokButton href="https://www.tiktok.com/@boelimited?_t=8oJpZoCT0bt&_r=1" target="_blank" rel="noopener noreferrer">
+            TikTok <i className="fa fa-arrow-right"></i>
+          </TiktokButton>
+        </ContactCard>
+
+        <ContactCard>
+          <IconWrapper>
+            <i className="fa fa-location-dot" style={{ color: '#ff2a45' }}></i>
+          </IconWrapper>
+          <h4>Our Location</h4>
+          <p>Mali Location</p>
+          <p>Kenya Location</p>
+          <LocationButton href="https://www.google.com/maps/place/Mali" target="_blank" rel="noopener noreferrer">
+            View on Map <i className="fa fa-arrow-right"></i>
+          </LocationButton>
+        </ContactCard>
+      </ContactInfoSection>
     </PageContainer>
   );
 };
 
-export default AboutPage;
+export default ContactPage;

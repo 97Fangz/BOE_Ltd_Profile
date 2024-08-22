@@ -1,18 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const FooterContainer = styled.footer`
-  background-color: #f8f9fa;
-  padding: 1rem;
-  text-align: center;
-  border-top: 1px solid #dee2e6;
-  color: #6c757d;
-`;
-
-const Footer: React.FC = () => (
-  <FooterContainer>
+const Footer = () => (
+  <footer className="bg-gray-100 py-4 text-center border-t border-gray-300 text-gray-600 mt-auto">
     <p>For more information, please contact us.</p>
-  </FooterContainer>
+  </footer>
 );
 
 export default Footer;

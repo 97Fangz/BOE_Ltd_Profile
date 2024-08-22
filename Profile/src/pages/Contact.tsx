@@ -20,7 +20,7 @@ const Contact = () => {
           <h4 className="mb-3 text-amber-900 text-xl font-semibold">WhatsApp</h4>
           <p className="mb-4 text-black">+254715119636</p>
           <a
-            href="https://wa.me/254798877813"
+            href="https://wa.me/254715119636"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors"
