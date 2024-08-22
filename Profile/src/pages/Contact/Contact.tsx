@@ -5,7 +5,7 @@ import ContactSection from './ContactSection';
 const Contact: React.FC = () => {
   return (
     <div>
-      <HeroSection />
+      <HeroSection /> 
       <ContactSection />
     </div>
   );

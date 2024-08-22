@@ -3,51 +3,23 @@ import styled from 'styled-components';
 import ContactCard from './ContactCard';
 
 const ContactSectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 1rem;
   background-color: #f0f4f8;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-  @media (min-width: 768px) {
-    padding: 4rem 2rem;
-  }
+  padding: 2rem;
 `;
 
 const SectionTitle = styled.h2`
-  width: 100%;
   text-align: center;
   font-size: 2rem;
   color: #333;
   margin-bottom: 2rem;
-
-  @media (min-width: 768px) {
-    font-size: 2.5rem;
-  }
 `;
 
 const CardGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background-color: #fff8e1; /* Gold light background */
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 1200px;
-
-  @media (min-width: 576px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-  }
-
-  @media (min-width: 992px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
 `;
 
 const ContactSection: React.FC = () => (
