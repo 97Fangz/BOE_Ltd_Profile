@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+# BOE Limited - Company Profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+BOE Limited is a premier mineral mining and selling company founded in 2023. Specializing in gold, diamonds, gemstones, and other minerals, we provide high-quality products and services to our clients worldwide. Our commitment to excellence and integrity has quickly established us as a leading provider in the industry.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Description
 
-## Expanding the ESLint configuration
+This project is a digital company profile for BOE Limited. The website showcases our history, services, achievements, and contact information. Designed with modern web technologies, it provides an accessible and user-friendly interface for potential clients to learn more about our offerings.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Key Features
 
-- Configure the top-level `parserOptions` property like this:
+- **About Us Section**: Details the company's history, mission, and services.
+- **Gallery**: A visually appealing display of our products and achievements.
+- **Contact Section**: Provides multiple contact methods, including WhatsApp, phone, email, and social media links, all easily accessible through interactive cards.
+- **Responsive Design**: Ensures the website looks great on all devices, from desktops to mobile phones.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Technologies Used
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **React**: For building the dynamic and interactive user interface.
+- **Styled Components**: For component-level styling with a clean and maintainable code structure.
+- **CSS Grid**: For a responsive and flexible layout, particularly in the contact section.
+
+## Installation and Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/boe-limited-profile.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd boe-limited-profile
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+5. Open your browser and go to `http://localhost:3000` to view the website.
+
+## Contact
+
+For inquiries or further information, please contact us via [boelimited275@gmail.com](mailto:boelimited275@gmail.com) or visit our [website](https://www.boelimited.co.ke).
+

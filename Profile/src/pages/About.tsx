@@ -134,6 +134,14 @@ const AboutPage: React.FC = () => {
           <TeamText>
             <p className="text-[#1b180e] text-base font-medium leading-normal">Joel Chesiro</p>
             <p className="text-[#97864e] text-sm font-normal leading-normal">Founder</p>
+            <div className="flex gap-3 mt-2">
+              <a href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-instagram text-[#97864e] fa-lg"></i>
+              </a>
+              <a href="https://wa.me/254715119636" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-whatsapp text-[#97864e] fa-lg"></i>
+              </a>
+            </div>
           </TeamText>
         </TeamSection>
       </ContentSection>
