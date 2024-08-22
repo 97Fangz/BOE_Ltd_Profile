@@ -65,6 +65,13 @@ const ContactButton = styled.a`
   }
 `;
 
+const WhatsAppButton = styled(ContactButton)`
+  background-color: #25d366; /* WhatsApp Green */
+  &:hover {
+    background-color: #1ebe54;
+  }
+`;
+
 const PhoneButton = styled(ContactButton)`
   background-color: #28a745; /* Green */
   &:hover {
@@ -107,6 +114,16 @@ const Contact: React.FC = () => {
         precious metals like gold.
       </p>
       <ContactContainer>
+        <ContactCard>
+          <IconWrapper>
+            <i className="" style={{ color: '#25d366' }}></i> {/* WhatsApp Green icon */}
+          </IconWrapper>
+          <h4 className="mb-3 text-amber-900">WhatsApp</h4>
+          <p className="mb-2 text-black">+254798877813</p>
+          <WhatsAppButton href="https://wa.me/254798877813" target="_blank" rel="noopener noreferrer">
+            Chat Now <i className="fa fa-arrow-right"></i>
+          </WhatsAppButton>
+        </ContactCard>
         <ContactCard>
           <IconWrapper>
             <i className="fa fa-phone" style={{ color: '#28a745' }}></i> {/* Green icon */}
