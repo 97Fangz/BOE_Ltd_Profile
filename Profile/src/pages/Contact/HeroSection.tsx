@@ -1,31 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HeroContainer = styled.div`
-  background-image: url("/Boelogo.jpeg");
-  background-size: cover;
-  background-position: center;
-  height: 300px; /* Increased height for a more prominent hero section */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
+const HeroContainer = styled.section`
+  background-color: #f7f7f7;
+  padding: 2rem 1rem;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   margin-bottom: 2rem;
-  padding: 1rem;
+`;
 
-  h1 {
-    font-size: 3rem; /* Adjusted font size for better visibility */
-    font-weight: 700;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
-    margin: 0;
-  }
+const HeroTitle = styled.h2`
+  font-size: 2.5rem;
+  color: #b67d0d; /* Amber color */
+  font-weight: 600;
+  border-bottom: 4px solid #b67d0d;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+`;
+
+const HeroText = styled.p`
+  font-size: 1.125rem;
+  color: #4a4a4a;
+  max-width: 600px;
+  margin: 0 auto;
 `;
 
 const HeroSection: React.FC = () => (
   <HeroContainer>
-    <h1>Contact Us</h1>
+    <HeroTitle>Contact Us</HeroTitle>
+    <HeroText>
+      If you have any inquiries or need more information about our services, please reach out to us. Our expert brokers in Kenya are here to assist you with all your logistics needs, including the secure shipment of precious metals like gold.
+    </HeroText>
   </HeroContainer>
 );
 

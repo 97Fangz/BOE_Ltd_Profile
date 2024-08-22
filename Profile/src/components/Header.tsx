@@ -2,103 +2,209 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Styled components
 const Navbar = styled.nav`
-  background: #f4f4f4;
+  background: #f4f4f4; /* Light grey background */
   color: #222;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  border-bottom: 2px solid #d10000; /* Red border at the bottom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const Logo = styled.img`
+  width: 50px;
+  height: auto;
+
+  @media (max-width: 768px) {
+    width: 40px;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d10000; /* Darker red for title */
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const MenuButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+const NavList = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #f4f4f4; /* Light grey background */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    border: 1px solid #d10000; /* Border color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+`;
+
+const NavItem = styled(NavLink)`
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #f0e5c9; /* Light gold for tabs */
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.active {
+    border-bottom: 2px solid #d10000; /* Highlight for active tab */
+    background-color: #fff; /* White background for active tab */
+    color: #d10000;
+  }
+
+  &:hover {
+    background-color: #d10000; /* Darker red on hover */
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+`;
+
+const DropdownMenu = styled.div<{ open: boolean }>`
+  display: ${props => (props.open ? 'block' : 'none')};
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  max-width: 300px;
+  background: #f4f4f4; /* Light grey background */
+  border: 1px solid #d10000; /* Border color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 0.5rem;
+  box-sizing: border-box;
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const DropdownLink = styled(NavLink)`
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.active {
+    background-color: #d10000; /* Highlight active link */
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #d10000;
+    color: #fff;
+  }
 `;
 
 const Header: React.FC = () => {
   const [open, setIsOpen] = useState(false);
-  
+
   return (
     <Navbar>
-      <div className='flex items-center justify-center gap-2'>
-        <img src="Boelogo.jpeg" width={50} alt="BOE Logo" />
-        <h1>BOE Limited</h1>
-      </div>
-      <div className='text-gray-800 hidden md:flex items-center justify-center gap-6'>
-        <NavLink
-          to="/"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
+      <LogoContainer>
+        <Logo src="Boelogo.jpeg" alt="BOE Logo" />
+        <Title>BOE Limited</Title>
+      </LogoContainer>
+      <NavList>
+        <NavItem to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
           Home
           <i className="fa-solid fa-house"></i>
-        </NavLink>
-        <NavLink 
-          to="/about"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
+        </NavItem>
+        <NavItem to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
           About Us
           <i className="fa fa-circle-question"></i>
-        </NavLink>
-        <NavLink 
-          to="/services"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
+        </NavItem>
+        <NavItem to="/services" className={({ isActive }) => (isActive ? 'active' : '')}>
           Services
           <i className="fa-solid fa-concierge-bell"></i>
-        </NavLink>
-        <NavLink 
-          to="/contact"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
+        </NavItem>
+        <NavItem to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
           Contact
           <i className="fa-solid fa-phone"></i>
-        </NavLink>
-        <NavLink 
-          to="/pricing"
-          className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
+        </NavItem>
+        <NavItem to="/pricing" className={({ isActive }) => (isActive ? 'active' : '')}>
           Pricing
           <i className="fa-solid fa-tag"></i>
-        </NavLink>
-      </div>
-      <div className='hidden md:flex items-center justify-center text-green-500 py-2 px-5'>
-        <span className="fs-5 fw-bold me-2"><i className="fa fa-phone-alt me-2"></i>Call Us:</span>
-        <span className="fs-5 fw-bold">+254798877813</span>
-      </div>
-      <div className='block md:hidden' onClick={() => setIsOpen(true)}>
-        <i className='fa fa-bars cursor-pointer fa-2x text-gray-800'></i>
-      </div>
-      {open && (
-        <div className='absolute border-2 z-[999] transition-all duration-150 ease-in-out border-amber-300 w-[300px] right-0 top-0 mt-6 rounded mr-3 h-[50vh] bg-amber-100'>
-          <i
-            onClick={() => setIsOpen(false)}
-            className='fa fa-times cursor-pointer absolute mr-2 mt-2 top-0 fa-2x right-0'></i>
-          <div className='flex flex-col gap-4 items-center justify-center h-[100%]'>
-            <NavLink
-              to="/"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
-              Home
-              <i className="fa-solid fa-house"></i>
-            </NavLink>
-            <NavLink 
-              to="/about"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
-              About Us
-              <i className="fa fa-circle-question"></i>
-            </NavLink>
-            <NavLink 
-              to="/services"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
-              Services
-              <i className="fa-solid fa-concierge-bell"></i>
-            </NavLink>
-            <NavLink 
-              to="/contact"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
-              Contact
-              <i className="fa-solid fa-phone"></i>
-            </NavLink>
-            <NavLink 
-              to="/pricing"
-              className={({ isActive }) => `${isActive ? "border-b-2 font-semibold border-gray-800 bg-[white] py-1 px-2" : ""} flex items-center justify-center gap-2`}>
-              Pricing
-              <i className="fa-solid fa-tag"></i>
-            </NavLink>
-          </div>
-        </div>
-      )}
+        </NavItem>
+      </NavList>
+      <MenuButton onClick={() => setIsOpen(!open)} aria-controls="dropdown-menu" aria-expanded={open}>
+        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </MenuButton>
+      <DropdownMenu open={open} id="dropdown-menu">
+        <DropdownLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Home
+          <i className="fa-solid fa-house"></i>
+        </DropdownLink>
+        <DropdownLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
+          About Us
+          <i className="fa fa-circle-question"></i>
+        </DropdownLink>
+        <DropdownLink to="/services" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Services
+          <i className="fa-solid fa-concierge-bell"></i>
+        </DropdownLink>
+        <DropdownLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Contact
+          <i className="fa-solid fa-phone"></i>
+        </DropdownLink>
+        <DropdownLink to="/pricing" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Pricing
+          <i className="fa-solid fa-tag"></i>
+        </DropdownLink>
+      </DropdownMenu>
     </Navbar>
   );
 };
