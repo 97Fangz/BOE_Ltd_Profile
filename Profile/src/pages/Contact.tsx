@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
       <ContactContainer>
         <ContactCard>
           <IconWrapper>
-            <i className="" style={{ color: '#25d366' }}></i> {/* WhatsApp Green icon */}
+            <i className="fa-brands fa-whatsapp" style={{ color: '#25d366' }}></i> {/* WhatsApp Green icon */}
           </IconWrapper>
           <h4 className="mb-3 text-amber-900">WhatsApp</h4>
           <p className="mb-2 text-black">+254798877813</p>
