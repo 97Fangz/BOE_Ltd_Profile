@@ -7,12 +7,16 @@ import Services from './pages/Services';
 import Contact from './pages/Contact/Contact';
 import Pricing from './pages/Pricing/Pricing';
 import Home from './pages/Home';
+import AppRoutes from './routes/AppRoutes';
 import './App.css';
 
 const App: React.FC = () => {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
+        <div className="min-h-screen bg-gray-100">
+      <AppRoutes />
+    </div>
         <Header />
         <main className="flex-grow">
           <Routes>

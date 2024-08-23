@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: boe_limited_db
+    environment:
+            MYSQL_ROOT_PASSWORD: @Brz4871
+      MYSQL_DATABASE: boe_limited
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
