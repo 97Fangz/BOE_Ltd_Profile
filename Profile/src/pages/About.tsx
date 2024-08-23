@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
+// Page Container Styling
 const PageContainer = styled.div`
   font-family: "Noto Serif", "Noto Sans", sans-serif;
   background-color: #fcfbf8;
@@ -8,6 +11,7 @@ const PageContainer = styled.div`
   overflow-x: hidden;
 `;
 
+// Hero Section Styling
 const HeroSection = styled.div`
   background-image: url("/Boelogo.jpeg");
   background-size: cover;
@@ -28,6 +32,7 @@ const HeroSection = styled.div`
   }
 `;
 
+// Content Section Styling
 const ContentSection = styled.section`
   max-width: 1200px;
   margin: 0 auto;
@@ -38,6 +43,7 @@ const ContentSection = styled.section`
   margin-bottom: 2rem;
 `;
 
+// Section Title Styling
 const SectionTitle = styled.h2`
   color: #1b180e;
   font-size: 1.75rem;
@@ -47,6 +53,7 @@ const SectionTitle = styled.h2`
   padding-bottom: 0.5rem;
 `;
 
+// Section Text Styling
 const SectionText = styled.p`
   color: #1b180e;
   font-size: 1rem;
@@ -54,6 +61,7 @@ const SectionText = styled.p`
   margin-bottom: 1.5rem;
 `;
 
+// Image Grid Styling
 const ImageGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -61,6 +69,7 @@ const ImageGrid = styled.div`
   margin-bottom: 2rem;
 `;
 
+// Image Item Styling
 const ImageItem = styled.div`
   background-size: cover;
   background-position: center;
@@ -68,6 +77,7 @@ const ImageItem = styled.div`
   border-radius: 8px;
 `;
 
+// Team Section Styling
 const TeamSection = styled.div`
   display: flex;
   align-items: center;
@@ -77,6 +87,7 @@ const TeamSection = styled.div`
   border-radius: 8px;
 `;
 
+// Team Image Styling
 const TeamImage = styled.div`
   background-size: cover;
   background-position: center;
@@ -85,10 +96,51 @@ const TeamImage = styled.div`
   height: 70px;
 `;
 
+// Team Text Styling
 const TeamText = styled.div`
   flex: 1;
 `;
 
+// Download Section Styling
+const DownloadSection = styled(ContentSection)`
+  background-color: #fcfbf8;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  border: 2px solid #f4a261;
+`;
+
+// Guidance Text Styling
+const GuidanceText = styled(SectionText)`
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+`;
+
+// Download Button Styling
+const DownloadButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  background-color: #f4a261;
+  color: #1b180e;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: #e76f51;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  svg {
+    margin-right: 0.5rem;
+  }
+`;
+
+// About Page Component
 const AboutPage: React.FC = () => {
   return (
     <PageContainer>
@@ -145,6 +197,18 @@ const AboutPage: React.FC = () => {
           </TeamText>
         </TeamSection>
       </ContentSection>
+      <DownloadSection>
+        <SectionTitle>Download Our Company Profile</SectionTitle>
+        <GuidanceText>
+          For a detailed overview of our services, history, and key achievements, download our company profile.
+        </GuidanceText>
+        <DownloadButton
+          href="/path-to-your-company-profile.pdf"
+          download="BOE_Limited_Company_Profile.pdf"
+        >
+          <FontAwesomeIcon icon={faDownload} /> Download Profile
+        </DownloadButton>
+      </DownloadSection>
     </PageContainer>
   );
 };
