@@ -61,11 +61,11 @@ const TestimonialSection = () => (
       <h2 className="text-3xl font-bold text-gray-900 mb-8">What Our Clients Say</h2>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-4">"Their innovative solutions have transformed our business operations. Highly recommended!"</p>
+          <p className="text-gray-600 mb-4">"I had a fantastic experience purchasing gold from BOE Limited. The process was seamless, and the team was incredibly professional, guiding me through every step with clarity and confidence. The quality of the gold exceeded my expectations, and their customer service was top-notch. Highly recommended for anyone looking to invest in gold!"</p>
           <p className="font-semibold text-blue-600">- John Doe, CEO of TechCorp</p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-4">"Exceptional service and cutting-edge technology. They've been instrumental in our growth."</p>
+          <p className="text-gray-600 mb-4">"BOE Limited made my gold purchase easy and stress-free. Their knowledgeable staff answered all my questions, ensuring I felt secure in my decision. The transaction was smooth, and the gold quality was exceptional. I wouldn’t hesitate to recommend them for gold investments!"</p>
           <p className="font-semibold text-blue-600">- Jane Smith, CTO of InnovateCo</p>
         </div>
       </div>
