@@ -4,7 +4,7 @@ import CompanyInfo from '../components/CompanyInfo';
 import Services from '../components/Services';
 import History from '../components/History';
 
-const SectionWrapperProp = ({ children, title, icon: Icon }) => {
+const SectionWrapper = ({ children, title, icon: Icon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

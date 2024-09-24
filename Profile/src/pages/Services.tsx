@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Globe, Shield, CreditCard, Award } from 'lucide-react';
 
-
 const ServiceCard = ({ title, description, icon: Icon, features }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
