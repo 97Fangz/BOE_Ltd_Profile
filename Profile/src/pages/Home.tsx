@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
 import CompanyInfo from '../components/CompanyInfo';
 import Services from '../components/Services';
 import History from '../components/History';
 
-const SectionWrapper = ({ children, title, icon: Icon }) => {
+interface SectionWrapperProps {
+  children: React.ReactNode;
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, title, icon: Icon }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -102,7 +108,7 @@ const ContactSection = () => (
         <form className="space-y-4">
           <input type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           <input type="email" placeholder="Your Email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea placeholder="Your Message" rows="4" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
           <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
             Send Message
           </button>

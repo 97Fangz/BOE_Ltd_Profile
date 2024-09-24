@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Globe, Shield, CreditCard, Award } from 'lucide-react';
 
-const ServiceCard = ({ title, description, icon: Icon, features }) => {
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  features: string[];
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon: Icon, features }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

@@ -40,7 +40,12 @@ const CardText = styled.p`
   margin-bottom: 1rem;
 `;
 
-const ContactButton = styled.a`
+interface ContactButtonProps {
+  color: string;
+  hoverColor: string;
+}
+
+const ContactButton = styled.a<ContactButtonProps>`
   display: inline-flex;
   align-items: center;
   background-color: ${({ color }) => color};

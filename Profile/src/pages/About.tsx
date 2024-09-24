@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Download, Instagram, Phone } from 'lucide-react';
 
-const SectionWrapper = ({ children, title, icon: Icon }) => {
+interface SectionWrapperProps {
+  children: React.ReactNode;
+  title: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, title, icon: Icon }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
