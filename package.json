@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "framer-motion": "^11.6.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0"
+  }
+}

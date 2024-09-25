@@ -2,51 +2,86 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Section = styled.section`
-  padding: 2rem;
-  background: #fff;
+  padding: 2.5rem 1rem;
+  background: #f9fafb; /* Light background */
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+`;
+
+const Title = styled.h2`
+  font-size: 2.5rem;
+  color: #d97706; /* Amber color */
+  font-weight: 700;
+  margin-bottom: 2rem;
+`;
+
+const Description = styled.p`
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.125rem;
+  color: #374151; /* Darker gray text */
+  line-height: 1.75rem;
 `;
 
 const ServiceList = styled.ul`
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 `;
 
 const ServiceItem = styled.li`
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 8px;
+  background: #fef3c7; /* Amber-100 */
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 280px;
+  height: 150px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-8px); /* Lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  }
+
+  i {
+    font-size: 2rem;
+    color: #b45309; /* Darker amber */
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #1f2937; /* Darker text */
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
 `;
 
 const Services: React.FC = () => {
   return (
     <Section>
-      <h2 className='text-center text-2xl text-amber-900 font-semibold'>Our Services</h2>
-      <ServiceList className='flex items-center justify-center flex-wrap gap-8'>
-        <ServiceItem 
-        className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
-        >
-          <i className='fa fa-globe fa-2x text-amber-900'></i>
-          To be a leading mining company on the globe</ServiceItem>
-          <ServiceItem 
-        className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
-        >
-          <i className='fa-solid fa-spoon fa-2x text-amber-900'></i>
-          Mining of earth minerals
-          </ServiceItem>
-      
-          <ServiceItem 
-        className='flex items-center justify-center gap-3 flex-col w-[300px] text-center bg-amber-100  h-[120px]'
-        >
-          <i className="fa-regular fa-heart fa-2x text-amber-900"></i>
-          To supply the best quality of minerals across the globe
-     </ServiceItem>
-        
+      <Title>Our Services</Title>
+      <Description>
+        At BOE Limited, we are committed to delivering excellence in mining, logistics, and the supply of premium minerals across the globe. Our goal is to lead with innovation and integrity in every service we offer.
+      </Description>
+      <ServiceList>
+        <ServiceItem>
+          <i className="fa fa-globe" />
+          <p>Global Leader in Mining</p>
+        </ServiceItem>
+        <ServiceItem>
+          <i className="fa-solid fa-spoon" />
+          <p>Mining of Earth Minerals</p>
+        </ServiceItem>
+        <ServiceItem>
+          <i className="fa-regular fa-heart" />
+          <p>Best Quality Mineral Supply</p>
+        </ServiceItem>
       </ServiceList>
-      <div className='flex items-center justify-center gap-7 flex-wrap' >
-      <div className='md:w-1/3'>
-        <img src="" alt="" />
-      </div>
-      </div>
     </Section>
   );
 };
