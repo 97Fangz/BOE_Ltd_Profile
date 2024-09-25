@@ -55,50 +55,9 @@ const HeroSection = () => (
       <p className="text-xl md:text-2xl font-medium mb-10">
         From responsible mining to innovative agriculture, BOE Limited delivers lasting value through logistics and real estate expertise.
       </p>
-      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-      </div>
     </div>
   </section>
 );
-
-/**const IndustriesSectionComponent = () => (
-  <SectionWrapper
-    title="Our Industries"
-    icon={() => (
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <path fillRule="evenodd" d="M10 2a8 8 0 10-8 8 8 8 0 008-8zm1 11.25V10h1.75L10 12.25 8.25 10H10v3.25zm1.25-5.25H8.75V5h3.5v3.25z" clipRule="evenodd" />
-      </svg>
-    )}
-  >
-    <div className="space-y-8">
-      <div>
-        <h3 className="text-lg font-semibold text-blue-800">Mining</h3>
-        <p className="text-gray-600">
-          BOE Limited pioneers in gold mining, extracting precious metals through responsible methods that prioritize sustainability. We ensure minimal environmental impact while maximizing the value of our operations. Our state-of-the-art mining facilities, coupled with deep expertise, enable us to contribute significantly to the global market.
-        </p>
-      </div>
-      <div>
-        <h3 className="text-lg font-semibold text-blue-800">Logistics</h3>
-        <p className="text-gray-600">
-          Our logistics division operates with precision and reliability, providing secure and timely delivery services. We employ advanced tracking systems to ensure the safety of goods from departure to arrival, maintaining a strong network across the globe to meet diverse transportation needs.
-        </p>
-      </div>
-      <div>
-        <h3 className="text-lg font-semibold text-blue-800">Real Estate</h3>
-        <p className="text-gray-600">
-          At BOE Limited, real estate isn't just about property; it's about creating value. From residential to commercial developments, we provide consultancy and project management services to craft spaces that foster community growth and economic vitality.
-        </p>
-      </div>
-      <div>
-        <h3 className="text-lg font-semibold text-blue-800">Agriculture</h3>
-        <p className="text-gray-600">
-          Our agricultural initiatives focus on sustainability and innovation. We collaborate with local farmers, utilizing cutting-edge techniques to enhance productivity and deliver high-quality products to the market. BOE Limited supports food security and eco-friendly practices.
-        </p>
-      </div>
-    </div>
-  </SectionWrapper>
-);
-**/
 
 const TestimonialSection = () => (
   <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
@@ -172,12 +131,13 @@ const Home = () => {
         
         <SectionWrapper 
           title="Our Services" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" /><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
+          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1H9V3a1 1 0 00-1-1zm0 1h2v2H6V5zm0 4h2v2H6V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9zM2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
         >
           <Services />
         </SectionWrapper>
         
         <IndustriesSectionComponent />
+        
         <TestimonialSection />
         
         <SectionWrapper 
