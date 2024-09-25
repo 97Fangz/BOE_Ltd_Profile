@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
 import CompanyInfo from '../components/CompanyInfo';
 import Services from '../components/Services';
-import IndustriesSectionComponent from '../components/IndustriesSection';
 import History from '../components/History';
+import IndustriesSection from '../components/IndustriesSection';
 
 interface SectionWrapperProps {
   children: React.ReactNode;
@@ -50,11 +50,14 @@ const HeroSection = () => (
     </div>
     <div className="relative max-w-4xl mx-auto text-center">
       <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
-        Building Sustainable Value: <span className="text-yellow-400">From Earth to</span> Enterprise.
+        Sustainable Mining, Reliable Logistics, <span className="text-yellow-400">Innovative Real Estate and </span> Growth-Driven Agriculture.
       </h1>
       <p className="text-xl md:text-2xl font-medium mb-10">
-        From responsible mining to innovative agriculture, BOE Limited delivers lasting value through logistics and real estate expertise.
+        Premium gold solutions for a prosperous future.
       </p>
+      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        
+      </div>
     </div>
   </section>
 );
@@ -131,12 +134,17 @@ const Home = () => {
         
         <SectionWrapper 
           title="Our Services" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1H9V3a1 1 0 00-1-1zm0 1h2v2H6V5zm0 4h2v2H6V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9zM2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
+          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" /><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
         >
           <Services />
         </SectionWrapper>
-        
-        <IndustriesSectionComponent />
+
+        <SectionWrapper 
+          title="Our Industries" 
+          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 2a8 8 0 10-8 8 8 8 0 008-8zm1 11.25V10h1.75L10 12.25 8.25 10H10v3.25zm1.25-5.25H8.75V5h3.5v3.25z" clipRule="evenodd" /></svg>}
+        >
+          <IndustriesSection />
+        </SectionWrapper>
         
         <TestimonialSection />
         

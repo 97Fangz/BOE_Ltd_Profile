@@ -151,6 +151,9 @@ const DropdownLink = styled(NavLink)`
 const Header: React.FC = () => {
   const [open, setIsOpen] = useState(false);
 
+  const handleDropdownToggle = () => setIsOpen(!open);
+  const handleLinkClick = () => setIsOpen(false); // Close the dropdown on link click
+
   return (
     <Navbar>
       <LogoContainer>
@@ -179,27 +182,27 @@ const Header: React.FC = () => {
           Pricing
         </NavItem>
       </NavList>
-      <MenuButton onClick={() => setIsOpen(!open)} aria-controls="dropdown-menu" aria-expanded={open}>
+      <MenuButton onClick={handleDropdownToggle} aria-controls="dropdown-menu" aria-expanded={open}>
         <i className="fas fa-bars"></i>
       </MenuButton>
       <DropdownMenu open={open} id="dropdown-menu">
-        <DropdownLink to="/" end>
+        <DropdownLink to="/" end onClick={handleLinkClick}>
           <i className="fas fa-home"></i>
           Home
         </DropdownLink>
-        <DropdownLink to="/about">
+        <DropdownLink to="/about" onClick={handleLinkClick}>
           <i className="fas fa-info-circle"></i>
           About Us
         </DropdownLink>
-        <DropdownLink to="/services">
+        <DropdownLink to="/services" onClick={handleLinkClick}>
           <i className="fas fa-concierge-bell"></i>
           Services
         </DropdownLink>
-        <DropdownLink to="/contact">
+        <DropdownLink to="/contact" onClick={handleLinkClick}>
           <i className="fas fa-envelope"></i>
           Contact
         </DropdownLink>
-        <DropdownLink to="/pricing">
+        <DropdownLink to="/pricing" onClick={handleLinkClick}>
           <i className="fas fa-tags"></i>
           Pricing
         </DropdownLink>
