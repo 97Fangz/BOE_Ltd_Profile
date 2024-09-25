@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://97fangz.github.io/BOE_Ltd_Profile/",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
