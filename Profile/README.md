@@ -43,5 +43,5 @@ This project is a digital company profile for BOE Limited. The website showcases
 
 ## Contact
 
-For inquiries or further information, please contact us via [boelimited275@gmail.com](mailto:boelimited275@gmail.com) or visit our [website](https://www.boelimited.co.ke).
+For inquiries or further information, please contact us via [boelimited275@gmail.com](mailto:boelimited275@gmail.com) or visit our [website](https://www.boelimited.shop).
 
