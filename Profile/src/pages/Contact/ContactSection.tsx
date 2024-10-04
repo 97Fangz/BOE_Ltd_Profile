@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { motion } from 'framer-motion';
 import ContactCard from './ContactCard';
 
 const gradientAnimation = keyframes`
@@ -9,7 +8,7 @@ const gradientAnimation = keyframes`
   100% { background-position: 0% 50%; }
 `;
 
-const ContactSectionContainer = styled(motion.section)`
+const ContactSectionContainer = styled.section`
   background: linear-gradient(135deg, #0033A0, #00254A, #FFD700, #0033A0);
   background-size: 400% 400%;
   animation: ${gradientAnimation} 15s ease infinite;
@@ -20,7 +19,7 @@ const ContactSectionContainer = styled(motion.section)`
   max-width: 1200px;
 `;
 
-const SectionTitle = styled(motion.h2)`
+const SectionTitle = styled.h2`
   text-align: center;
   font-size: 2.5rem;
   color: #FFD700;
@@ -28,7 +27,7 @@ const SectionTitle = styled(motion.h2)`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 `;
 
-const CardGrid = styled(motion.div)`
+const CardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
@@ -48,33 +47,10 @@ const StyledContactCard = styled(ContactCard)`
 `;
 
 const ContactSection = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
-
   return (
-    <ContactSectionContainer
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <SectionTitle variants={itemVariants}>Get in Touch</SectionTitle>
-      <CardGrid variants={containerVariants}>
+    <ContactSectionContainer>
+      <SectionTitle>Get in Touch</SectionTitle>
+      <CardGrid>
         <StyledContactCard
           icon="fa-brands fa-whatsapp"
           title="WhatsApp"
