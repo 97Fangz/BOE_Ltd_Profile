@@ -8,12 +8,40 @@ const ContactPageContainer = styled.div`
 `;
 
 const HeroSectionStyled = styled.div`
-  background-color: #333333;
+  background-color: #0033A0; // Standard Chartered's primary blue
   color: white;
   border-radius: 10px;
   padding: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  // Gradient overlay for depth
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 51, 160, 1) 0%,
+    rgba(0, 76, 240, 1) 100%
+  );
+
+  // Add a subtle border
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  // Typography enhancements
+  h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  // Add a hover effect
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const HeroTitle = styled.h1`
