@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
 import { Phone, Mail, MapPin, Instagram, TikTok } from 'lucide-react';
 
