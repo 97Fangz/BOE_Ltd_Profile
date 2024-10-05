@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardHeader, CardContent, CardFooter } from '../ui/card';
+import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card';
 import { Button } from '../ui/button';
 import { Phone, Mail, MapPin, Instagram, TikTok } from 'lucide-react';
 
