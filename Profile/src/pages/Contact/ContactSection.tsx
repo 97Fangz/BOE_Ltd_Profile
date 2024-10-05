@@ -61,7 +61,7 @@ const ContactCard = ({ icon, title, description, content, action }) => {
         </CardHeader>
         <CardContent>
           <p className="text-sky-600 text-sm mb-2 text-center">{description}</p>
-          {content.map((item, index) => (
+          {content.map((item: string, index: number) => (
             <p key={index} className="text-center text-gray-700">{item}</p>
           ))}
         </CardContent>
