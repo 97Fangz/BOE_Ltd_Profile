@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card'; // Relative path fix
-import { Button } from '@/components/ui/button'; // Assuming alias is already set up for @
+import { Button } from '../../components/ui/button'; // Adjusted to relative path
 import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 const contactData = [
