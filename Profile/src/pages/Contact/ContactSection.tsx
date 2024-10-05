@@ -1,15 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Camera, Smartphone, Mail, MapPin, Instagram, Video } from 'lucide-react';
 
-interface ContactCardProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  title: string;
-  content: string[];
-  buttonText: string;
-  buttonHref: string;
-}
-
-const ContactCard: React.FC<ContactCardProps> = ({ icon: Icon, title, content, buttonText, buttonHref }) => {
+interface ContactCardProps
   const cardRef = useRef(null);
 
   useEffect(() => {
