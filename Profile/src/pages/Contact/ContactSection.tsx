@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card'; // Relative path fix
 import { Button } from '@/components/ui/button'; // Assuming alias is already set up for @
-import { Phone, Mail, MapPin, Instagram, TikTok } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 
 const contactData = [
   {
@@ -33,7 +33,7 @@ const contactData = [
     action: "https://www.instagram.com/boelimited"
   },
   {
-    icon: <TikTok size={24} />,
+    icon: <Instagram size={24} />, // Reusing Instagram icon as a placeholder
     title: "TikTok",
     description: "Catch our trending short-form videos",
     content: ["@boelimited"],
