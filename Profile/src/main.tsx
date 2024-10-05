@@ -4,7 +4,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../co
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-const ContactCard = ({ Icon, title, description, buttonText, buttonHref }) => {
+// Define types for the ContactCard props
+interface ContactCardProps {
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+const ContactCard: React.FC<ContactCardProps> = ({ Icon, title, description, buttonText, buttonHref }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -28,7 +37,8 @@ const ContactCard = ({ Icon, title, description, buttonText, buttonHref }) => {
   );
 };
 
-const ContactSection = () => {
+const ContactSection: React.FC = () => {
+  // Contact card data
   const contactData = [
     {
       Icon: MessageSquare,
