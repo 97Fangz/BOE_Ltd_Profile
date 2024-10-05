@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card';
-import { Button } from '../ui/button';
+import { Button } from '../../components/ui/button';
 import { Phone, Mail, MapPin, Instagram, TikTok } from 'lucide-react';
 
 interface ContactData {
