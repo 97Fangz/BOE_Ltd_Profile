@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { Card, CardHeader, CardContent, CardFooter } from '../../components/ui/card'; // Relative path fix
-import { Button } from '../../components/ui/button'; // Adjusted to relative path
-import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Phone, Mail, MapPin, Instagram, TikTok } from 'lucide-react';
 
 const contactData = [
   {
@@ -33,7 +34,7 @@ const contactData = [
     action: "https://www.instagram.com/boelimited"
   },
   {
-    icon: <Instagram size={24} />, // Reusing Instagram icon as a placeholder
+    icon: <TikTok size={24} />,
     title: "TikTok",
     description: "Catch our trending short-form videos",
     content: ["@boelimited"],
@@ -41,56 +42,65 @@ const contactData = [
   }
 ];
 
-interface ContactCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  content: string[];
-  action: string;
-}
-
-const ContactCard: React.FC<ContactCardProps> = ({ icon, title, description, content, action }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
+const ContactCard = ({ icon, title, description, content, action }) => {
   return (
-    <Card 
-      className="bg-blue-900 text-white transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
-      <CardHeader className="flex flex-col items-center">
-        <div className={`text-blue-300 transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}>
-          {icon}
-        </div>
-        <h3 className="mt-2 font-bold text-xl">{title}</h3>
-      </CardHeader>
-      <CardContent>
-        <p className="text-blue-200 text-sm mb-2">{description}</p>
-        {content.map((item, index) => (
-          <p key={index} className="text-center">{item}</p>
-        ))}
-      </CardContent>
-      <CardFooter className="justify-center">
-        <Button 
-          variant="outline" 
-          className="bg-blue-700 text-white hover:bg-blue-600 transition-colors duration-300"
-          onClick={() => window.open(action, '_blank')}
-        >
-          Connect
-        </Button>
-      </CardFooter>
-    </Card>
+      <Card className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col justify-between">
+        <CardHeader className="flex flex-col items-center space-y-2">
+          <motion.div
+            className="text-sky-500"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.5 }}
+          >
+            {icon}
+          </motion.div>
+          <h3 className="font-bold text-xl text-sky-800">{title}</h3>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sky-600 text-sm mb-2 text-center">{description}</p>
+          {content.map((item, index) => (
+            <p key={index} className="text-center text-gray-700">{item}</p>
+          ))}
+        </CardContent>
+        <CardFooter className="justify-center">
+          <Button 
+            variant="outline" 
+            className="bg-sky-500 text-white hover:bg-sky-600 transition-colors duration-300"
+            onClick={() => window.open(action, '_blank')}
+          >
+            Connect
+          </Button>
+        </CardFooter>
+      </Card>
+    </motion.div>
   );
 };
 
 const ContactSection = () => {
   return (
-    <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-16 px-4 rounded-lg shadow-2xl max-w-7xl mx-auto my-8">
-      <h2 className="text-4xl font-bold text-center text-white mb-12 animate-pulse">Get in Touch</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {contactData.map((card, index) => (
-          <ContactCard key={index} {...card} />
-        ))}
+    <section className="bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300 py-16 px-4 min-h-screen flex items-center justify-center">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-bold text-center text-sky-800 mb-12"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          Get in Touch
+        </motion.h2>
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {contactData.map((card, index) => (
+            <ContactCard key={index} {...card} />
+          ))}
+        </motion.div>
       </div>
     </section>
   );
