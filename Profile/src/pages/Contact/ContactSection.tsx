@@ -22,16 +22,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ icon: Icon, title, content, b
       { threshold: 0.1 }
     );
 
-    const currentCardRef = cardRef.current;
-    if (currentCardRef) {
-      observer.observe(currentCardRef);
-    }
-
-    return () => {
-      if (currentCardRef) {
-        observer.unobserve(currentCardRef);
-      }
-    };
+    const currentCardRef
   }, []);
 
   return (
