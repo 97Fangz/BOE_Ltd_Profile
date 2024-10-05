@@ -42,7 +42,15 @@ const contactData = [
   }
 ];
 
-const ContactCard = ({ icon, title, description, content, action }) => {
+interface ContactCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  content: string[];
+  action: string;
+}
+
+const ContactCard: React.FC<ContactCardProps> = ({ icon, title, description, content, action }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
