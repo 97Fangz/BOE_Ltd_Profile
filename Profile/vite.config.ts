@@ -11,10 +11,5 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
-  },
-  build: {
-    rollupOptions: {
-      external: ['framer-motion']
-    }
   }
 });
