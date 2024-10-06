@@ -1,102 +1,107 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Card, CardContent } from '../../components/ui/card';
+import { Button } from '../../components/ui/button';
+import { Phone, Mail, MapPin, Instagram, User as TikTok } from 'lucide-react';
 
-const Card = styled.div`
-  background-color: #ffffff;
-  text-align: center;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  transition: box-shadow 0.3s, transform 0.3s;
-  
-  &:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-  }
-`;
-
-const IconWrapper = styled.div`
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e0e0e0;
-  border-radius: 50%;
-  margin: 0 auto 1rem auto;
-  font-size: 2rem;
-`;
-
-const CardTitle = styled.h4`
-  color: #b67d0d; /* Amber color */
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-`;
-
-const CardText = styled.p`
-  color: #333333;
-  margin-bottom: 1rem;
-`;
-
-interface ContactButtonProps {
-  color: string;
-  hoverColor: string;
-}
-
-const ContactButton = styled.a<ContactButtonProps>`
-  display: inline-flex;
-  align-items: center;
-  background-color: ${({ color }) => color};
-  color: #ffffff;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
-  
-  &:hover {
-    background-color: ${({ hoverColor }) => hoverColor};
-    transform: scale(1.05);
-  }
-  
-  i {
-    margin-left: 0.5rem;
-  }
-`;
-
-interface ContactCardProps {
-  icon: string;
+interface ContactData {
+  icon: React.ReactNode;
   title: string;
+  description: string;
   content: string[];
-  buttonText: string;
-  buttonColor: string;
-  buttonHoverColor: string;
-  buttonHref: string;
+  action: string;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ 
-  icon, title, content, buttonText, buttonColor, buttonHoverColor, buttonHref 
-}) => (
-  <Card>
-    <IconWrapper>
-      <i className={icon} style={{ color: buttonColor }}></i>
-    </IconWrapper>
-    <CardTitle>{title}</CardTitle>
-    {content.map((line, index) => (
-      <CardText key={index}>{line}</CardText>
-    ))}
-    <ContactButton 
-      href={buttonHref} 
-      color={buttonColor}
-      hoverColor={buttonHoverColor}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {buttonText} <i className="fa fa-arrow-right"></i>
-    </ContactButton>
-  </Card>
-);
+const contactData: ContactData[] = [
+  {
+    icon: <Phone size={24} />,
+    title: "Phone",
+    description: "Reach out directly",
+    content: ["+254798877813", "+254715119636"],
+    action: "tel:+254798877813"
+  },
+  {
+    icon: <Mail size={24} />,
+    title: "Email",
+    description: "Send us a message",
+    content: ["boelimited275@gmail.com"],
+    action: "mailto:boelimited275@gmail.com"
+  },
+  {
+    icon: <MapPin size={24} />,
+    title: "Location",
+    description: "Find us here",
+    content: ["Mali Location", "Kenya Location"],
+    action: "https://www.google.com/maps/place/Mali"
+  },
+  {
+    icon: <Instagram size={24} />,
+    title: "Instagram",
+    description: "Follow our updates",
+    content: ["@boelimited"],
+    action: "https://www.instagram.com/boelimited"
+  },
+  {
+    icon: <TikTok size={24} />,
+    title: "TikTok",
+    description: "Watch our videos",
+    content: ["@boelimited"],
+    action: "https://www.tiktok.com/@boelimited"
+  }
+];
 
-export default ContactCard;
+const ContactCard: React.FC<ContactData> = ({ icon, title, description, content, action }) => {
+  return (
+    <div className="transform transition duration-500 hover:scale-105 active:scale-95">
+      <Card className="bg-white bg-opacity-80 backdrop-blur-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden rounded-2xl border border-gray-200">
+        <CardContent className="p-6 flex items-center">
+          <div className="mr-6">
+            <div className="text-blue-500 bg-blue-100 p-3 rounded-full">
+              {icon}
+            </div>
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-semibold text-lg text-gray-800 mb-1">{title}</h3>
+            <p className="text-gray-600 text-sm mb-2">{description}</p>
+            {content.map((item, index) => (
+              <p key={index} className="text-blue-600 font-medium">{item}</p>
+            ))}
+          </div>
+          <Button 
+            variant="ghost"
+            onClick={() => window.open(action, '_blank')}
+            className="ml-4 group"
+          >
+            <span className="transform transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+const ContactSection: React.FC = () => {
+  return (
+    <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-20 px-4 min-h-screen flex items-center justify-center overflow-hidden">
+      <div 
+        className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 w-full max-w-4xl mx-auto opacity-0 scale-90 animate-fade-in-scale"
+      >
+        <h2 
+          className="text-3xl md:text-4xl font-bold text-center text-white mb-12 opacity-0 animate-fade-in-down"
+        >
+          Get in Touch
+        </h2>
+        <div 
+          className="space-y-6 opacity-0 animate-fade-in-up"
+        >
+          {contactData.map((card, index) => (
+            <ContactCard key={index} {...card} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
