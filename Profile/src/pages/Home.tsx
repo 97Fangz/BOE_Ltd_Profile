@@ -50,7 +50,7 @@ const HeroSection = () => (
     </div>
     <div className="relative max-w-4xl mx-auto text-center">
       <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
-        Sustainable Mining, Reliable Logistics, <span className="text-yellow-400">Innovative Real Estate and </span> Growth-Driven Agriculture.
+        Sustainable Mining, Logistics, <span className="text-yellow-400">Real Estate and </span> Agriculture.
       </h1>
       <p className="text-xl md:text-2xl font-medium mb-10">
         Premium gold solutions for a prosperous future.
