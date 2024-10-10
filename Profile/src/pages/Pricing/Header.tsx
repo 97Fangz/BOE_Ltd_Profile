@@ -175,10 +175,10 @@ const Header: React.FC = () => {
   const [dashboardVisible, setDashboardVisible] = useState(true);
   const location = useLocation();
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   useEffect(() => {
-    setMobileMenuOpen(false);
+
     setDashboardVisible(false);
   }, [location]);
 
