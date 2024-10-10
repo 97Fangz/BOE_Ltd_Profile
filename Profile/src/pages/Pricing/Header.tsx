@@ -106,26 +106,7 @@ const MobileMenuButton = styled.button`
   }
 `;
 
-const MobileMenu = styled.div<{ isOpen: boolean }>`
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #FFFAF0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 4rem;
-  }
-`;
+// Removed unused MobileMenu component
 
 const CloseButton = styled.button`
   position: absolute;
@@ -199,7 +180,7 @@ const routes: Route[] = [
 ];
 
 const Header: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const [dashboardVisible, setDashboardVisible] = useState(true);
   const location = useLocation();
 
