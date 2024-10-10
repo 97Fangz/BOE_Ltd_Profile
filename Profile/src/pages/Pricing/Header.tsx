@@ -108,16 +108,7 @@ const MobileMenuButton = styled.button`
 
 // Removed unused MobileMenu component
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
-  color: #4A4A4A;
-  font-size: 1.5rem;
-  cursor: pointer;
-`;
+// Removed unused CloseButton component
 
 const MobileDashboard = styled.div<{ isVisible: boolean }>`
   position: fixed;
@@ -183,6 +174,8 @@ const Header: React.FC = () => {
 
   const [dashboardVisible, setDashboardVisible] = useState(true);
   const location = useLocation();
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     setMobileMenuOpen(false);
