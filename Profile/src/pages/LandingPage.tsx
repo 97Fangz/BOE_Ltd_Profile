@@ -19,7 +19,14 @@ const GoldPriceChart = ({ data }: { data: GoldPriceData[] }) => (
   </ResponsiveContainer>
 );
 
-const ProductCard = ({ name, purity, origin, price }) => (
+interface ProductCardProps {
+  name: string;
+  purity: string;
+  origin: string;
+  price: number;
+}
+
+const ProductCard = ({ name, purity, origin, price }: ProductCardProps) => (
   <div className="bg-white rounded-lg shadow-lg p-6 m-4">
     <DollarSign className="text-yellow-500 w-12 h-12 mb-4" />
     <h3 className="text-xl font-bold mb-2">{name}</h3>
