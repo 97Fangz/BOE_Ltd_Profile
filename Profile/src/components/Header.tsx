@@ -180,6 +180,8 @@ const routes: Route[] = [
   { path: '/services', name: 'Services', icon: <IoLayersSharp /> },
   { path: '/contact', name: 'Contact', icon: <IoMailSharp /> },
   { path: '/pricing', name: 'Pricing', icon: <IoWalletSharp /> },
+  { path: '/landingPage', name: 'Landing Page', icon: <IoWalletSharp /> },
+
 ];
 
 const Header: React.FC = () => {
