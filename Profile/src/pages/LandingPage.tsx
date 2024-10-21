@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { ShoppingCart, Award, Truck, DollarSign } from 'lucide-react';
 
-const GoldPriceChart = ({ data }) => (
+interface GoldPriceData {
+  date: string;
+  price: number;
+}
+
+const GoldPriceChart = ({ data }: { data: GoldPriceData[] }) => (
   <ResponsiveContainer width="100%" height={300}>
     <LineChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
