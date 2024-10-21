@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaInstagram, FaWhatsapp, FaTiktok, FaMapMarkerAlt, FaBars, FaEnvelope, FaPhone } from 'react-icons/fa';
-import { IoHomeSharp, IoInformationCircle, IoLayersSharp, IoMailSharp, IoWalletSharp } from 'react-icons/io5';
+import { IoHomeSharp, IoInformationCircle, IoLayersSharp, IoMailSharp, IoWalletSharp, IoFlagSharp } from 'react-icons/io5';
 
 const HeaderWrapper = styled.header`
-  background: #007791;
+  background: linear-gradient(135deg, #007791, #005f73);
   padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -32,18 +32,21 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
 `;
 
 const Title = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -55,13 +58,13 @@ const SocialIcons = styled.div`
 `;
 
 const SocialIcon = styled.a`
-  color: #ffd700; // Changed to gold
-  font-size: 1.2rem;
+  color: #ffd700;
+  font-size: 1.4rem;
   transition: all 0.3s ease;
 
   &:hover {
-    color: #ffea00; // Lighter gold on hover
-    transform: translateY(-3px);
+    color: #ffea00;
+    transform: translateY(-3px) rotate(15deg);
   }
 `;
 
@@ -102,6 +105,7 @@ const StyledNavLink = styled(NavLink)`
   &:hover, &.active {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    transform: translateY(-2px);
   }
 
   svg {
@@ -113,7 +117,7 @@ const MobileMenuButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: #ffd700; // Changed to gold
+  color: #ffd700;
   font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -133,7 +137,7 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   width: 280px;
-  background: #007791;
+  background: linear-gradient(135deg, #007791, #005f73);
   padding: 2rem 1rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
@@ -164,7 +168,7 @@ const MobileNavLink = styled(NavLink)`
   svg {
     margin-right: 1rem;
     font-size: 1.4rem;
-    color: #ffd700; // Changed to gold
+    color: #ffd700;
   }
 `;
 
@@ -172,16 +176,16 @@ interface Route {
   path: string;
   name: string;
   icon: React.ReactElement;
+  showInNav: boolean;
 }
 
 const routes: Route[] = [
-  { path: '/', name: 'Home', icon: <IoHomeSharp /> },
-  { path: '/about', name: 'About', icon: <IoInformationCircle /> },
-  { path: '/services', name: 'Services', icon: <IoLayersSharp /> },
-  { path: '/contact', name: 'Contact', icon: <IoMailSharp /> },
-  { path: '/pricing', name: 'Pricing', icon: <IoWalletSharp /> },
-  { path: '/landingPage', name: 'Landing Page', icon: <IoWalletSharp /> },
-
+  { path: '/', name: 'Home', icon: <IoHomeSharp />, showInNav: true },
+  { path: '/about', name: 'About', icon: <IoInformationCircle />, showInNav: true },
+  { path: '/services', name: 'Services', icon: <IoLayersSharp />, showInNav: true },
+  { path: '/contact', name: 'Contact', icon: <IoMailSharp />, showInNav: true },
+  { path: '/pricing', name: 'Pricing', icon: <IoWalletSharp />, showInNav: true },
+  { path: '/Invoice', name: 'Landing Page', icon: <IoFlagSharp />, showInNav: false },
 ];
 
 const Header: React.FC = () => {
@@ -197,7 +201,7 @@ const Header: React.FC = () => {
       <ContentWrapper>
         <TopBar>
           <LogoContainer>
-            <Logo src="Boelogo.jpeg" alt="BOE Logo" />
+            <Logo src="/Boelogo.jpeg" alt="BOE Logo" />
             <Title>BOE Limited</Title>
           </LogoContainer>
           <SocialIcons>
@@ -211,7 +215,7 @@ const Header: React.FC = () => {
         </TopBar>
         <NavContainer>
           <NavList>
-            {routes.map((route) => (
+            {routes.filter(route => route.showInNav).map((route) => (
               <NavItem key={route.path}>
                 <StyledNavLink to={route.path} end={route.path === '/'}>
                   {React.cloneElement(route.icon, { color: '#ffd700' })}
@@ -220,12 +224,12 @@ const Header: React.FC = () => {
               </NavItem>
             ))}
           </NavList>
-          <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu">
             <FaBars />
           </MobileMenuButton>
         </NavContainer>
         <MobileMenu isOpen={mobileMenuOpen}>
-          {routes.map((route) => (
+          {routes.filter(route => route.showInNav).map((route) => (
             <MobileNavLink key={route.path} to={route.path} onClick={() => setMobileMenuOpen(false)}>
               {React.cloneElement(route.icon, { color: '#ffd700' })}
               {route.name}

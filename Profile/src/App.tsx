@@ -8,6 +8,7 @@ import Contact from './pages/Contact/Contact';
 import Pricing from './pages/Pricing/Pricing';
 import Home from './pages/Home';
 import './App.css';
+import Invoice from './pages/Invoice';
 
 const App: React.FC = () => {
   return (
@@ -20,7 +21,9 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/pricing" element={<Pricing />} />            
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/Invoice" element={<Invoice />} />            
+           
           </Routes>
         </main>
         <Footer />
