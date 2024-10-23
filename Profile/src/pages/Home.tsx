@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Shield, Globe, DollarSign } from 'lucide-react';
+import { Shield, Globe, DollarSign } from 'lucide-react';
 import {
   LineChart,
   Line,
