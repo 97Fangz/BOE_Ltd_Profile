@@ -1,160 +1,271 @@
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
-import CompanyInfo from '../components/CompanyInfo';
-import Services from '../components/Services';
-import History from '../components/History';
-import IndustriesSection from '../components/IndustriesSection';
+import React, { useState, useEffect } from 'react';
+import { Phone, Mail, MapPin, Star, ShoppingCart, Clock, Shield, Globe, DollarSign } from 'lucide-react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer
+} from 'recharts';
 
-interface SectionWrapperProps {
-  children: React.ReactNode;
-  title: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
+// Mock gold price data - replace with actual API integration
+const mockHistoricalData = [
+  { date: '2023-10', price: 1850 },
+  { date: '2023-11', price: 1900 },
+  { date: '2023-12', price: 1950 },
+  { date: '2024-01', price: 2000 },
+  { date: '2024-02', price: 2050 },
+];
 
-const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, title, icon: Icon }) => {
-  const [isOpen, setIsOpen] = useState(false);
+// Gold products data
+const goldProducts = [
+  {
+    id: 1,
+    name: "24K Gold Bar",
+    weight: "1 kg",
+    purity: "99.99%",
+    price: 62500,
+    image: "/api/placeholder/400/300",
+    delivery: "2-3 business days",
+    description: "Investment-grade gold bar with certification"
+  },
+  {
+    id: 2,
+    name: "22K Gold Bar",
+    weight: "500 g",
+    purity: "91.67%",
+    price: 29800,
+    image: "/api/placeholder/400/300",
+    delivery: "2-3 business days",
+    description: "Premium gold bar for serious investors"
+  },
+  {
+    id: 3,
+    name: "24K Gold Coins",
+    weight: "100 g",
+    purity: "99.99%",
+    price: 6300,
+    image: "/api/placeholder/400/300",
+    delivery: "1-2 business days",
+    description: "Collectible gold coins with highest purity"
+  }
+];
+
+const LiveGoldPrice = () => {
+  const [price, setPrice] = useState(2024.50);
+  
+  useEffect(() => {
+    // Simulate live price updates
+    const interval = setInterval(() => {
+      setPrice(prev => prev + (Math.random() - 0.5) * 2);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="w-full max-w-6xl mx-auto mb-8 bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
-      <div 
-        className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-4 flex justify-between items-center cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="flex items-center space-x-3">
-          {Icon && <Icon className="text-blue-600 w-6 h-6" />}
-          <h2 className="text-2xl font-semibold text-blue-800">{title}</h2>
-        </div>
-        {isOpen ? <ChevronUp className="text-blue-600" /> : <ChevronDown className="text-blue-600" />}
+    <div className="bg-blue-900 text-white p-6 rounded-lg shadow-lg">
+      <h3 className="text-xl font-bold mb-2">Live Gold Price</h3>
+      <div className="text-3xl font-bold text-yellow-400">
+        ${price.toFixed(2)}/oz
       </div>
-      <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
-        <div className="p-6">{children}</div>
-      </div>
+      <p className="text-sm mt-2">Last updated: {new Date().toLocaleTimeString()}</p>
     </div>
   );
 };
 
-const HeroSection = () => (
-  <section className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-24 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg mb-16 overflow-hidden">
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute transform -translate-x-1/2 -translate-y-1/2 animate-pulse" style={{ top: '50%', left: '50%' }}>
-        <svg width="2000" height="2000" viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: '#4299e1', stopOpacity: 0.1 }} />
-              <stop offset="100%" style={{ stopColor: '#3182ce', stopOpacity: 0.3 }} />
-            </linearGradient>
-          </defs>
-          <circle cx="1000" cy="1000" r="800" fill="url(#grad)" />
-        </svg>
+const ProductCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % goldProducts.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + goldProducts.length) % goldProducts.length);
+  };
+
+  return (
+    <div className="relative overflow-hidden rounded-lg shadow-lg">
+      <div className="flex transition-transform duration-500 ease-in-out"
+           style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+        {goldProducts.map((product) => (
+          <div key={product.id} className="min-w-full">
+            <img src={product.image} alt={product.name} className="w-full h-64 object-cover" />
+            <div className="p-6 bg-white">
+              <h3 className="text-xl font-bold text-blue-900">{product.name}</h3>
+              <p className="text-gray-600">{product.description}</p>
+              <div className="mt-4 flex justify-between items-center">
+                <span className="text-2xl font-bold text-blue-900">${product.price.toLocaleString()}</span>
+                <button className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
+      <button onClick={prevSlide} className="absolute left-0 top-1/2 -translate-y-1/2 bg-blue-900/50 p-2 text-white rounded-r">
+        ←
+      </button>
+      <button onClick={nextSlide} className="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-900/50 p-2 text-white rounded-l">
+        →
+      </button>
     </div>
-    <div className="relative max-w-4xl mx-auto text-center">
-      <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
-        Sustainable Mining, Logistics, <span className="text-yellow-400">Real Estate and </span> Agriculture.
-      </h1>
-      <p className="text-xl md:text-2xl font-medium mb-10">
-        Premium gold solutions for a prosperous future.
-      </p>
-      <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        
-      </div>
-    </div>
-  </section>
+  );
+};
+
+const ComparisonTable = () => (
+  <div className="overflow-x-auto">
+    <table className="min-w-full bg-white rounded-lg shadow-lg">
+      <thead className="bg-blue-900 text-white">
+        <tr>
+          <th className="px-6 py-4">Product</th>
+          <th className="px-6 py-4">Purity</th>
+          <th className="px-6 py-4">Weight</th>
+          <th className="px-6 py-4">Price</th>
+          <th className="px-6 py-4">Delivery Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {goldProducts.map((product) => (
+          <tr key={product.id} className="border-b hover:bg-blue-50 transition-colors">
+            <td className="px-6 py-4">{product.name}</td>
+            <td className="px-6 py-4">{product.purity}</td>
+            <td className="px-6 py-4">{product.weight}</td>
+            <td className="px-6 py-4">${product.price.toLocaleString()}</td>
+            <td className="px-6 py-4">{product.delivery}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 );
 
-const TestimonialSection = () => (
-  <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
-    <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8">What Our Clients Say</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-4">"I had a fantastic experience purchasing gold from BOE Limited. The process was seamless, and the team was incredibly professional, guiding me through every step with clarity and confidence. The quality of the gold exceeded my expectations, and their customer service was top-notch. Highly recommended for anyone looking to invest in gold!"</p>
-          <p className="font-semibold text-blue-600">- John Doe, CEO of TechCorp</p>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <p className="text-gray-600 mb-4">"BOE Limited made my gold purchase easy and stress-free. Their knowledgeable staff answered all my questions, ensuring I felt secure in my decision. The transaction was smooth, and the gold quality was exceptional. I wouldn’t hesitate to recommend them for gold investments!"</p>
-          <p className="font-semibold text-blue-600">- Jane Smith, CTO of InnovateCo</p>
-        </div>
-      </div>
-    </div>
-  </section>
+const PriceChart = () => (
+  <div className="h-80 bg-white p-6 rounded-lg shadow-lg">
+    <h3 className="text-xl font-bold text-blue-900 mb-4">Historical Gold Prices</h3>
+    <ResponsiveContainer width="100%" height="100%">
+      <LineChart data={mockHistoricalData}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="price" stroke="#FCD34D" strokeWidth={2} />
+      </LineChart>
+    </ResponsiveContainer>
+  </div>
 );
 
-const ContactSection = () => (
-  <section id="contact" className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Get in Touch</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-          <ul className="space-y-4">
-            <li className="flex items-center">
-              <Phone className="w-6 h-6 text-blue-600 mr-2" />
-              <span>+254715119636</span>
-            </li>
-            <li className="flex items-center">
-              <Mail className="w-6 h-6 text-blue-600 mr-2" />
-              <span>boeltdcompany@gmail.com</span>
-            </li>
-            <li className="flex items-center">
-              <MapPin className="w-6 h-6 text-blue-600 mr-2" />
-              <span>Mali</span>
-            </li>
-            <li className="flex items-center">
-              <MapPin className="w-6 h-6 text-blue-600 mr-2" />
-              <span>Kenya</span>
-            </li>
-          </ul>
-        </div>
-        <form className="space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
-            Send Message
-          </button>
-        </form>
+const Newsletter = () => (
+  <div className="bg-blue-900 text-white p-8 rounded-lg shadow-lg">
+    <h3 className="text-2xl font-bold mb-4">Stay Updated with Gold Market Trends</h3>
+    <p className="mb-6">Subscribe to our newsletter for daily gold price updates and market insights.</p>
+    <form className="flex gap-4">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="flex-1 px-4 py-2 rounded-lg text-gray-900"
+      />
+      <button className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition-colors">
+        Subscribe
+      </button>
+    </form>
+  </div>
+);
+
+const PaymentMethods = () => (
+  <div className="bg-white p-6 rounded-lg shadow-lg">
+    <h3 className="text-xl font-bold text-blue-900 mb-4">Secure Payment Options</h3>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="p-4 border rounded-lg text-center">
+        <img src="/api/placeholder/80/50" alt="Visa" className="mx-auto mb-2" />
+        <span>Visa</span>
+      </div>
+      <div className="p-4 border rounded-lg text-center">
+        <img src="/api/placeholder/80/50" alt="MasterCard" className="mx-auto mb-2" />
+        <span>MasterCard</span>
+      </div>
+      <div className="p-4 border rounded-lg text-center">
+        <img src="/api/placeholder/80/50" alt="Bank Transfer" className="mx-auto mb-2" />
+        <span>Bank Transfer</span>
+      </div>
+      <div className="p-4 border rounded-lg text-center">
+        <img src="/api/placeholder/80/50" alt="Crypto" className="mx-auto mb-2" />
+        <span>Crypto</span>
       </div>
     </div>
-  </section>
+  </div>
 );
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <HeroSection />
-        
-        <SectionWrapper 
-          title="Company Overview" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" /></svg>}
-        >
-          <CompanyInfo />
-        </SectionWrapper>
-        
-        <SectionWrapper 
-          title="Our Services" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" /><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
-        >
-          <Services />
-        </SectionWrapper>
+      <div className="max-w-7xl mx-auto space-y-16">
+        {/* Hero Section */}
+        <section className="relative bg-blue-900 text-white py-24 px-8 rounded-2xl shadow-xl overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800 opacity-90" />
+            <img src="/api/placeholder/1920/1080" alt="Gold bars background" className="w-full h-full object-cover" />
+          </div>
+          <div className="relative max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
+              Premium <span className="text-yellow-400">Gold</span> Solutions
+            </h1>
+            <p className="text-xl md:text-2xl font-medium mb-10">
+              Your trusted partner in gold investment and trading
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <LiveGoldPrice />
+              <div className="col-span-2">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-blue-800/50 p-4 rounded-lg">
+                    <Shield className="w-8 h-8 text-yellow-400 mb-2" />
+                    <h3 className="font-semibold">Secure</h3>
+                    <p className="text-sm">100% Verified</p>
+                  </div>
+                  <div className="bg-blue-800/50 p-4 rounded-lg">
+                    <Globe className="w-8 h-8 text-yellow-400 mb-2" />
+                    <h3 className="font-semibold">Global</h3>
+                    <p className="text-sm">Worldwide Delivery</p>
+                  </div>
+                  <div className="bg-blue-800/50 p-4 rounded-lg">
+                    <DollarSign className="w-8 h-8 text-yellow-400 mb-2" />
+                    <h3 className="font-semibold">Best Rates</h3>
+                    <p className="text-sm">Competitive Pricing</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <SectionWrapper 
-          title="Our Industries" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 2a8 8 0 10-8 8 8 8 0 008-8zm1 11.25V10h1.75L10 12.25 8.25 10H10v3.25zm1.25-5.25H8.75V5h3.5v3.25z" clipRule="evenodd" /></svg>}
-        >
-          <IndustriesSection />
-        </SectionWrapper>
-        
-        <TestimonialSection />
-        
-        <SectionWrapper 
-          title="Our Journey" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" /></svg>}
-        >
-          <History />
-        </SectionWrapper>
-        
+        {/* Products Section */}
+        <section>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Featured Gold Products</h2>
+          <ProductCarousel />
+        </section>
+
+        {/* Price Chart */}
+        <section>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Gold Price Trends</h2>
+          <PriceChart />
+        </section>
+
+        {/* Comparison Table */}
+        <section>
+          <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Product Comparison</h2>
+          <ComparisonTable />
+        </section>
+
+        {/* Payment Methods */}
+        <PaymentMethods />
+
+        {/* Newsletter */}
+        <Newsletter />
+
+        {/* Contact Section */}
         <ContactSection />
       </div>
     </div>
