@@ -199,6 +199,41 @@ const PaymentMethods = () => (
   </div>
 );
 
+const ContactSection = () => (
+  <div className="bg-white p-6 rounded-lg shadow-lg">
+    <h3 className="text-xl font-bold text-blue-900 mb-4">Contact Us</h3>
+    <form className="space-y-4">
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Name</label>
+        <input
+          type="text"
+          className="mt-1 block w-full px-4 py-2 border rounded-lg text-gray-900"
+          placeholder="Your name"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Email</label>
+        <input
+          type="email"
+          className="mt-1 block w-full px-4 py-2 border rounded-lg text-gray-900"
+          placeholder="Your email"
+        />
+      </div>
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Message</label>
+        <textarea
+          className="mt-1 block w-full px-4 py-2 border rounded-lg text-gray-900"
+          rows={4}
+          placeholder="Your message"
+        />
+      </div>
+      <button className="bg-blue-900 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-800 transition-colors">
+        Send Message
+      </button>
+    </form>
+  </div>
+);
+
 const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
