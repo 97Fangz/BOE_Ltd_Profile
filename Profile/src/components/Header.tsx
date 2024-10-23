@@ -185,7 +185,7 @@ const routes: Route[] = [
   { path: '/services', name: 'Services', icon: <IoLayersSharp />, showInNav: true },
   { path: '/contact', name: 'Contact', icon: <IoMailSharp />, showInNav: true },
   { path: '/pricing', name: 'Pricing', icon: <IoWalletSharp />, showInNav: true },
-  { path: '/Invoice', name: 'Landing Page', icon: <IoFlagSharp />, showInNav: false },
+  { path: '/Invoice', name: 'Invoice', icon: <IoFlagSharp />, showInNav: false },
 ];
 
 const Header: React.FC = () => {

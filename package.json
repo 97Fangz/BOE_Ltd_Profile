@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/stripe-js": "^4.8.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/recharts": "^1.8.29",
     "lucide-react": "^0.263.1",
