@@ -286,4 +286,148 @@ const Home = () => {
         <section className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Contact Us</h2>
-            <div className="gri
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <h3 className="text-xl font-semibold mb-6 text-blue-800">Get in Touch</h3>
+                <ul className="space-y-6">
+                  <li className="flex items-center">
+                    <Phone className="w-6 h-6 text-blue-600 mr-4" />
+                    <div>
+                      <p className="font-medium">Phone</p>
+                      <p className="text-gray-600">+254715119636</p>
+                    </div>
+                  </li>
+                  <li className="flex items-center">
+                    <Mail className="w-6 h-6 text-blue-600 mr-4" />
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-gray-600">boeltdcompany@gmail.com</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <MapPin className="w-6 h-6 text-blue-600 mr-4 mt-1" />
+                    <div>
+                      <p className="font-medium">Locations</p>
+                      <p className="text-gray-600">Mali Office</p>
+                      <p className="text-gray-600 mt-2">Kenya Office</p>
+                    </div>
+                  </li>
+                </ul>
+                <div className="mt-8 p-4 bg-blue-50 rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    Our team is available during business hours (8:00 AM - 6:00 PM EAT) 
+                    to assist you with any inquiries.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white p-8 rounded-xl shadow-lg">
+                <form className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Name
+                    </label>
+                    <input 
+                      type="text" 
+                      placeholder="John Doe" 
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email Address
+                    </label>
+                    <input 
+                      type="email" 
+                      placeholder="john@example.com" 
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Subject
+                    </label>
+                    <select className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <option value="">Select a subject</option>
+                      <option value="trading">Gold Trading</option>
+                      <option value="investment">Investment Inquiry</option>
+                      <option value="storage">Storage Services</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Message
+                    </label>
+                    <textarea 
+                      placeholder="How can we help you?" 
+                      rows={4} 
+                      className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    ></textarea>
+                  </div>
+                  <button 
+                    type="submit" 
+                    className="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-md hover:bg-blue-700 transition duration-300 flex items-center justify-center"
+                  >
+                    Send Message
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className="bg-white rounded-lg shadow-lg mt-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">About BOE Limited</h3>
+                <p className="text-gray-600">
+                  Your trusted partner in gold trading, providing premium services and expert guidance 
+                  for all your precious metal investment needs.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/services" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      Our Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Business Hours</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                  <li>Saturday: 9:00 AM - 1:00 PM</li>
+                  <li>Sunday: Closed</li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <p className="text-center text-gray-500">
+                © {new Date().getFullYear()} BOE Limited. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
