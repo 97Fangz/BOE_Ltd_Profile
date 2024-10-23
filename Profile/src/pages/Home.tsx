@@ -1,5 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import CompanyInfo from '../components/CompanyInfo';
+import Services from '../components/Services';
+import History from '../components/History';
+import IndustriesSection from '../components/IndustriesSection';
 
 interface SectionWrapperProps {
   children: React.ReactNode;
@@ -217,6 +221,8 @@ const Home = () => {
         <SectionWrapper title="Our Services" icon={ChevronDown}>
           <GoldServices />
         </SectionWrapper>
+
+        
 
         <SectionWrapper title="Client Testimonials" icon={ChevronDown}>
           <TestimonialSlider />
