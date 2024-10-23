@@ -1,38 +1,51 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronDown, ChevronUp, Phone, Mail, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, ChevronUp, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Award, Shield, TrendingUp } from 'lucide-react';
 import CompanyInfo from '../components/CompanyInfo';
 import Services from '../components/Services';
 import History from '../components/History';
 import IndustriesSection from '../components/IndustriesSection';
 
-interface SectionWrapperProps {
-  children: React.ReactNode;
-  title: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
-
+// Enhanced testimonials data
 const testimonials = [
   {
     text: "BOE Limited's gold trading expertise has been instrumental in our investment success. Their market analysis and execution are impeccable.",
     author: "Michael Chen",
     position: "Investment Director, Global Assets Ltd",
-    rating: 5
+    rating: 5,
+    image: "/api/placeholder/64/64"
   },
   {
     text: "The level of professionalism and expertise in gold trading at BOE Limited is outstanding. Their commitment to security and transparency sets them apart.",
     author: "Sarah Williams",
     position: "Portfolio Manager, Heritage Investments",
-    rating: 5
+    rating: 5,
+    image: "/api/placeholder/64/64"
   },
   {
     text: "Working with BOE Limited for our gold investments has been a game-changer. Their market insights and execution are consistently excellent.",
     author: "Robert Martinez",
     position: "CEO, Premium Metals Trading",
-    rating: 5
+    rating: 5,
+    image: "/api/placeholder/64/64"
+  },
+  {
+    text: "Their dedication to client success and deep understanding of the gold market makes BOE Limited an invaluable partner.",
+    author: "Emma Thompson",
+    position: "Director of Operations, Global Trade Partners",
+    rating: 5,
+    image: "/api/placeholder/64/64"
   }
 ];
 
-const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, title, icon: Icon }) => {
+// Enhanced stats data
+const statsData = [
+  { label: "Years of Experience", value: "15+", icon: Award },
+  { label: "Successful Trades", value: "10K+", icon: TrendingUp },
+  { label: "Client Satisfaction", value: "99%", icon: Shield },
+];
+
+const SectionWrapper = ({ children, title, icon: Icon }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -47,12 +60,24 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ children, title, icon: 
         </div>
         {isOpen ? <ChevronUp className="text-blue-600" /> : <ChevronDown className="text-blue-600" />}
       </div>
-      <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+      <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
         <div className="p-6">{children}</div>
       </div>
     </div>
   );
 };
+
+const StatsSection = () => (
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+    {statsData.map((stat, index) => (
+      <div key={index} className="bg-white p-8 rounded-xl shadow-lg text-center">
+        <stat.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+        <div className="text-4xl font-bold text-blue-800 mb-2">{stat.value}</div>
+        <div className="text-gray-600">{stat.label}</div>
+      </div>
+    ))}
+  </div>
+);
 
 const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,9 +92,7 @@ const TestimonialSlider = () => {
   }, [isAnimating]);
   
   useEffect(() => {
-    const timer = setInterval(() => {
-      handleNext();
-    }, 5000);
+    const timer = setInterval(handleNext, 5000);
     return () => clearInterval(timer);
   }, [currentIndex, handleNext]);
 
@@ -85,13 +108,22 @@ const TestimonialSlider = () => {
     <div className="relative bg-white rounded-xl shadow-lg p-8 mx-auto max-w-4xl">
       <div className="overflow-hidden">
         <div className={`transition-transform duration-500 ease-in-out transform ${isAnimating ? 'opacity-50' : 'opacity-100'}`}>
-          <div className="text-gray-600 text-lg italic mb-6">{testimonials[currentIndex].text}</div>
-          <div className="flex items-center mb-2">
-            {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-              <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
+          <div className="flex items-center mb-6">
+            <img 
+              src={testimonials[currentIndex].image} 
+              alt={testimonials[currentIndex].author}
+              className="w-16 h-16 rounded-full mr-4"
+            />
+            <div>
+              <div className="text-gray-600 text-lg italic">{testimonials[currentIndex].text}</div>
+              <div className="flex items-center mt-2">
+                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="font-semibold text-blue-600">{testimonials[currentIndex].author}</div>
           <div className="text-sm text-gray-500">{testimonials[currentIndex].position}</div>
@@ -129,18 +161,33 @@ const GoldServices = () => (
     {[
       {
         title: "Gold Trading",
-        description: "Professional gold trading services with competitive rates and secure transactions",
+        description: "Expert gold trading services with competitive rates, secure transactions, and real-time market analysis to maximize your investment potential.",
         icon: "💰"
       },
       {
         title: "Investment Advisory",
-        description: "Expert guidance on gold investments and portfolio diversification strategies",
+        description: "Comprehensive guidance on gold investments, portfolio diversification strategies, and market trend analysis from seasoned professionals.",
         icon: "📊"
       },
       {
         title: "Secure Storage",
-        description: "State-of-the-art secure storage facilities for your precious metal investments",
+        description: "State-of-the-art secure storage facilities with 24/7 surveillance, insurance coverage, and easy access to your precious metal investments.",
         icon: "🔒"
+      },
+      {
+        title: "Market Analysis",
+        description: "In-depth market research and analysis to help you make informed investment decisions in the dynamic gold market.",
+        icon: "📈"
+      },
+      {
+        title: "Global Network",
+        description: "Access to an extensive network of global partners and markets, ensuring competitive prices and diverse investment opportunities.",
+        icon: "🌍"
+      },
+      {
+        title: "Compliance Support",
+        description: "Expert guidance on regulatory compliance and documentation for seamless gold trading operations.",
+        icon: "📋"
       }
     ].map((service, index) => (
       <div key={index} className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
@@ -152,43 +199,37 @@ const GoldServices = () => (
   </div>
 );
 
-const ContactSection = () => (
-  <section className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Contact Us</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-          <ul className="space-y-4">
-            <li className="flex items-center">
-              <Phone className="w-6 h-6 text-blue-600 mr-2" />
-              <span>+254715119636</span>
-            </li>
-            <li className="flex items-center">
-              <Mail className="w-6 h-6 text-blue-600 mr-2" />
-              <span>boeltdcompany@gmail.com</span>
-            </li>
-            <li className="flex items-center">
-              <MapPin className="w-6 h-6 text-blue-600 mr-2" />
-              <span>Mali</span>
-            </li>
-            <li className="flex items-center">
-              <MapPin className="w-6 h-6 text-blue-600 mr-2" />
-              <span>Kenya</span>
-            </li>
-          </ul>
-        </div>
-        <form className="space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <input type="email" placeholder="Your Email" className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-          <textarea placeholder="Your Message" rows={4} className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-          <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
-            Send Message
-          </button>
-        </form>
-      </div>
+const WhyChooseUs = () => (
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+    <div className="bg-white p-8 rounded-xl shadow-lg">
+      <h3 className="text-2xl font-semibold text-blue-800 mb-4">Why Choose BOE Limited?</h3>
+      <ul className="space-y-4">
+        {[
+          "15+ years of excellence in gold trading",
+          "Dedicated team of market experts",
+          "Secure and transparent transactions",
+          "Competitive rates and flexible investment options",
+          "24/7 customer support",
+          "Global market access",
+          "Comprehensive market analysis",
+          "Regulatory compliance assured"
+        ].map((item, index) => (
+          <li key={index} className="flex items-center">
+            <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
-  </section>
+    <div className="bg-white p-8 rounded-xl shadow-lg">
+      <img src="/api/placeholder/400/300" alt="Gold trading" className="w-full rounded-lg mb-6" />
+      <p className="text-gray-600 leading-relaxed">
+        At BOE Limited, we combine years of expertise with cutting-edge technology to provide you with the best gold trading experience. Our commitment to excellence, transparency, and customer satisfaction has made us a trusted name in the industry.
+      </p>
+    </div>
+  </div>
 );
 
 const Home = () => {
@@ -205,48 +246,36 @@ const Home = () => {
               Premium <span className="text-yellow-400">Gold Trading</span> Solutions
             </h1>
             <p className="text-xl md:text-2xl font-medium mb-10">
-              Your trusted partner in global gold trading and investment
+              Your trusted partner in global gold trading and investment excellence
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition duration-300">
+              <Link to="/contact" className="px-8 py-3 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition duration-300">
                 Start Trading
-              </button>
-              <button className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition duration-300">
+              </Link>
+              <Link to="/about" className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition duration-300">
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </section>
+
+        <StatsSection />
 
         <SectionWrapper title="Our Services" icon={ChevronDown}>
           <GoldServices />
         </SectionWrapper>
 
-         <SectionWrapper 
-          title="Company Overview" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" /></svg>}
-        >
+        <WhyChooseUs />
+
+        <SectionWrapper title="Company Overview" icon={ChevronDown}>
           <CompanyInfo />
         </SectionWrapper>
-        
-        <SectionWrapper 
-          title="Our Services" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" /><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z" /></svg>}
-        >
-          <Services />
-        </SectionWrapper>
 
-        <SectionWrapper 
-          title="Our Industries" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 2a8 8 0 10-8 8 8 8 0 008-8zm1 11.25V10h1.75L10 12.25 8.25 10H10v3.25zm1.25-5.25H8.75V5h3.5v3.25z" clipRule="evenodd" /></svg>}
-        >
+        <SectionWrapper title="Our Industries" icon={ChevronDown}>
           <IndustriesSection />
         </SectionWrapper>
 
-        <SectionWrapper 
-          title="Our Journey" 
-          icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" /></svg>}
-        >
+        <SectionWrapper title="Our Journey" icon={ChevronDown}>
           <History />
         </SectionWrapper>
 
@@ -254,10 +283,7 @@ const Home = () => {
           <TestimonialSlider />
         </SectionWrapper>
 
-        <ContactSection />
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+        <section className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Contact Us</h2>
+            <div className="gri
