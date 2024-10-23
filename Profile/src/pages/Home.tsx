@@ -45,7 +45,15 @@ const statsData = [
   { label: "Client Satisfaction", value: "99%", icon: Shield },
 ];
 
-const SectionWrapper = ({ children, title, icon: Icon }) => {
+import { ReactNode } from 'react';
+
+interface SectionWrapperProps {
+  children: ReactNode;
+  title: string;
+  icon?: React.ComponentType<{ className?: string }>;
+}
+
+const SectionWrapper = ({ children, title, icon: Icon }: SectionWrapperProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
