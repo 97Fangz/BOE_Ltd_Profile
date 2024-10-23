@@ -54,6 +54,14 @@ const TestimonialSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const handleNext = () => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+      setTimeout(() => setIsAnimating(false), 500);
+    }
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
@@ -65,14 +73,6 @@ const TestimonialSlider = () => {
     if (!isAnimating) {
       setIsAnimating(true);
       setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-      setTimeout(() => setIsAnimating(false), 500);
-    }
-  };
-
-  const handleNext = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
