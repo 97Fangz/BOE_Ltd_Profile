@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Award, Shield, TrendingUp } from 'lucide-react';
 import CompanyInfo from '../components/CompanyInfo';
-import Services from '../components/Services';
+
 import History from '../components/History';
 import IndustriesSection from '../components/IndustriesSection';
 
