@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, MapPin } from 'lucide-react';
 
 // Sample gold products data
 const goldProducts = [
