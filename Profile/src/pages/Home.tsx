@@ -283,101 +283,104 @@ const Home = () => {
         <TestimonialSlider />
         </SectionWrapper>
 
-        <section className="bg-gradient-to-br from-amber-50 to-amber-100 py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-16">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Contact Us</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 rounded-xl shadow-lg">
-                <h3 className="text-xl font-semibold mb-6 text-amber-800">Get in Touch</h3>
-                <ul className="space-y-6">
-                  <li className="flex items-center">
-                    <Phone className="w-6 h-6 text-amber-600 mr-4" />
-                    <div>
-                      <p className="font-medium text-gray-900">Phone</p>
-                      <p className="text-gray-700">+254715119636</p>
-                    </div>
-                  </li>
-                  <li className="flex items-center">
-                    <Mail className="w-6 h-6 text-amber-600 mr-4" />
-                    <div>
-                      <p className="font-medium text-gray-900">Email</p>
-                      <p className="text-gray-700">boeltdcompany@gmail.com</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <MapPin className="w-6 h-6 text-amber-600 mr-4 mt-1" />
-                    <div>
-                      <p className="font-medium text-gray-900">Locations</p>
-                      <p className="text-gray-700">Mali Office</p>
-                      <p className="text-gray-700 mt-2">Kenya Office</p>
-                    </div>
-                  </li>
-                </ul>
-                <div className="mt-8 p-4 bg-amber-50 rounded-lg">
-                  <p className="text-sm text-gray-700">
-                    Our team is available during business hours (8:00 AM - 6:00 PM EAT) 
-                    to assist you with any inquiries.
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white p-8 rounded-xl shadow-lg">
-                <form className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Name
-                    </label>
-                    <input 
-                      type="text" 
-                      placeholder="John Doe" 
-                      className="w-full px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500" 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address
-                    </label>
-                    <input 
-                      type="email" 
-                      placeholder="john@example.com" 
-                      className="w-full px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500" 
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Subject
-                    </label>
-                    <select className="w-full px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500">
-                      <option value="">Select a subject</option>
-                      <option value="trading">Gold Trading</option>
-                      <option value="investment">Investment Inquiry</option>
-                      <option value="storage">Storage Services</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Message
-                    </label>
-                    <textarea 
-                      placeholder="How can we help you?" 
-                      rows={4} 
-                      className="w-full px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold py-3 px-4 rounded-md hover:from-amber-700 hover:to-amber-800 transition duration-300 flex items-center justify-center"
-                  >
-                    Send Message
-                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
-                </form>
-              </div>
+        <section className="bg-gradient-to-br from-amber-50 to-amber-100 py-8 sm:py-16 px-4 sm:px-6 lg:px-8 rounded-lg shadow-inner mb-8 sm:mb-16 w-full">
+  <div className="w-full max-w-4xl mx-auto">
+    <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">Contact Us</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
+      {/* Contact Information Card */}
+      <div className="bg-white p-4 sm:p-8 rounded-xl shadow-lg w-full">
+        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-amber-800">Get in Touch</h3>
+        <ul className="space-y-4 sm:space-y-6">
+          <li className="flex items-center">
+            <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 mr-3 sm:mr-4" />
+            <div>
+              <p className="font-medium text-gray-900 text-sm sm:text-base">Phone</p>
+              <p className="text-gray-700 text-sm sm:text-base">+254715119636</p>
             </div>
+          </li>
+          <li className="flex items-center">
+            <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 mr-3 sm:mr-4" />
+            <div>
+              <p className="font-medium text-gray-900 text-sm sm:text-base">Email</p>
+              <p className="text-gray-700 text-sm sm:text-base">boeltdcompany@gmail.com</p>
+            </div>
+          </li>
+          <li className="flex items-start">
+            <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 mr-3 sm:mr-4 mt-1" />
+            <div>
+              <p className="font-medium text-gray-900 text-sm sm:text-base">Locations</p>
+              <p className="text-gray-700 text-sm sm:text-base">Mali Office</p>
+              <p className="text-gray-700 mt-1 text-sm sm:text-base">Kenya Office</p>
+            </div>
+          </li>
+        </ul>
+        <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-amber-50 rounded-lg">
+          <p className="text-xs sm:text-sm text-gray-700">
+            Our team is available during business hours (8:00 AM - 6:00 PM EAT) 
+            to assist you with any inquiries.
+          </p>
+        </div>
+      </div>
+
+      {/* Contact Form Card */}
+      <div className="bg-white p-4 sm:p-8 rounded-xl shadow-lg w-full">
+        <form className="space-y-3 sm:space-y-4">
+          <div>
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+              Your Name
+            </label>
+            <input 
+              type="text" 
+              placeholder="John Doe" 
+              className="w-full px-3 sm:px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base" 
+            />
           </div>
-        </section>
+          <div>
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+              Email Address
+            </label>
+            <input 
+              type="email" 
+              placeholder="john@example.com" 
+              className="w-full px-3 sm:px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base" 
+            />
+          </div>
+          <div>
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+              Subject
+            </label>
+            <select className="w-full px-3 sm:px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base">
+              <option value="">Select a subject</option>
+              <option value="trading">Gold Trading</option>
+              <option value="investment">Investment Inquiry</option>
+              <option value="storage">Storage Services</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
+              Your Message
+            </label>
+            <textarea 
+              placeholder="How can we help you?" 
+              rows={4} 
+              className="w-full px-3 sm:px-4 py-2 rounded-md border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm sm:text-base"
+            ></textarea>
+          </div>
+          <button 
+            type="submit" 
+            className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold py-2 sm:py-3 px-4 rounded-md hover:from-amber-700 hover:to-amber-800 transition duration-300 flex items-center justify-center text-sm sm:text-base"
+          >
+            Send Message
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
         <footer className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg shadow-lg mt-16 overflow-hidden">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
