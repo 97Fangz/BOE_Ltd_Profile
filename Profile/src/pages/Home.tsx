@@ -59,7 +59,7 @@ const TestimonialSlider = () => {
       handleNext();
     }, 5000);
     return () => clearInterval(timer);
-  }, [currentIndex]);
+  }, [currentIndex, handleNext]);
 
   const handlePrev = () => {
     if (!isAnimating) {
