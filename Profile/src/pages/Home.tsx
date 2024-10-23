@@ -133,33 +133,31 @@ const ContactSection = () => (
       </form>
     </div>
   </section>
-        {/* Our Gold Products Section */}
-        <GoldProductsSection />
+        <div className="screen bg-gradient-to-b from-blue50 via-white to-blue50 py12 px4 sm:px6 lg:px8">
+          <div className='max-w7xl mx-auto'>
+            {/* Hero section */}
+            <HeroSection />
 
-        {/* Testimonial Section */}
-        <TestimonialSection />
+            {/* Company Overview Section */}
+            <SectionWrapper title="Company Overview">
+              {/* Add CompanyInfo component here */}
+            </SectionWrapper>
 
-        {/* Contact Section */}
-        <ContactSection />screen bg-gradient-to-b from-blue50 via-white to-blue50 py12 px4 sm:px6 lg:px8">
-      <div className='max-w7xl mx-auto'>
-        {/* Hero section */}
-        <HeroSection />
+            {/* Our Services Section */}
+            <SectionWrapper title="Our Services">
+              {/* Add Services component here */}
+            </SectionWrapper>
 
-        {/* Company Overview Section */}
-        <SectionWrapper title="Company Overview">
-          {/* Add CompanyInfo component here */}
-        </SectionWrapper>
+            {/* Our Gold Products Section */}
+            <GoldProductsSection />
 
-        {/* Our Services Section */}
-        <SectionWrapper title="Our Services">
-          {/* Add Services component here */}
-        </SectionWrapper>
+            {/* Testimonial Section */}
+            <TestimonialSection />
 
-        {/* Testimonial Section */}
-        <TestimonialSection />
-
-        {/* Contact Section */}
-        <ContactSection />
+            {/* Contact Section */}
+            <ContactSection />
+          </div>
+        </div>
       </div>
     </div>
   );
