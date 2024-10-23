@@ -54,14 +54,14 @@ const Highlight = styled.span`
 const CompanyInfo: React.FC = () => {
   return (
     <Section>
-      <Title>About BOE Limited</Title>
-      <Text>
-        BOE Limited is a leading global company offering comprehensive solutions across four key industries: <Highlight>mining</Highlight>, <Highlight>logistics</Highlight>, <Highlight>real estate</Highlight>, and <Highlight>agriculture</Highlight>. We specialize in the extraction and sustainable management of precious resources, ensuring minimal environmental impact while maximizing value.
-      </Text>
-      <Text>
-        Headquartered in <Highlight>Kenya</Highlight>, BOE Limited is renowned for its expertise in the secure transport of goods, including precious metals like <Highlight>gold</Highlight>. Our logistics network guarantees timely, secure deliveries worldwide. Additionally, our real estate and agricultural services focus on creating lasting value through innovative developments and eco-friendly practices, fostering community and economic growth.
-      </Text>
-    </Section>
+ <Title>About BOE Limited</Title>
+ <Text>
+   BOE Limited is a specialized company focused on <Highlight>gold trading</Highlight>, offering comprehensive solutions in the precious metals market. We ensure secure and reliable transactions while maintaining the highest standards of business practices.
+ </Text>
+ <Text>
+   Headquartered in <Highlight>Kenya</Highlight>, BOE Limited has established itself as a trusted name in the <Highlight>gold</Highlight> trade sector. Our extended logistics arm, <Highlight>Fastisha Logistics</Highlight>, provides comprehensive transport solutions, ensuring secure and timely delivery services worldwide. Through our integrated approach to gold trading and logistics, we create lasting value while fostering economic growth in the regions we serve.
+ </Text>
+</Section>
   );
 };
 
