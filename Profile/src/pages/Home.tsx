@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Star, ShoppingCart, Clock, Shield, Globe, DollarSign } from 'lucide-react';
+import { MapPin, Star, ShoppingCart, Clock, Shield, Globe, DollarSign } from 'lucide-react';
 import {
   LineChart,
   Line,
