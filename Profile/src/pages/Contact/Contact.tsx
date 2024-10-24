@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   return (
     <div>
       <HeroSection /> 
-      <ContactCard />
+      <ContactSection />
     </div>
   );
 };
