@@ -6,14 +6,14 @@ import {
   Card,
   CardContent,
 
-  // CardTitle,
+  CardTitle,
 } from "./components/ui/card";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./components/ui/tooltip";
+} from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 
 interface ContactCardProps {
