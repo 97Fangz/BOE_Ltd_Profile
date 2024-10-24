@@ -6,7 +6,7 @@ import {
   Card,
   CardContent,
 
-  CardTitle,
+  // CardTitle, // Commented out as it does not exist
 } from "./components/ui/card";
 import {
   Tooltip,
@@ -49,9 +49,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
               {icon}
             </div>
             <div className="flex-1">
-              <CardTitle className="text-xl font-bold text-white mb-1">
+              <h2 className="text-xl font-bold text-white mb-1">
                 {title}
-              </CardTitle>
+              </h2>
               <p className="text-gray-300">
                 {description}
               </p>
