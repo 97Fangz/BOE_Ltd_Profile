@@ -1,8 +1,8 @@
-// ContactCard.tsx
+// src/pages/Contact/ContactCard.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent } from './components/ui/card';
+import { Button } from './components/ui/button';
 
 interface ContactCardProps {
   icon: React.ReactNode;
@@ -30,9 +30,6 @@ const ContactCard: React.FC<ContactCardProps> = ({
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 to-blue-900/90 backdrop-blur-sm">
           <div className="absolute inset-0 bg-gradient-to-br from-amber-400/10 to-amber-600/10" />
         </div>
-
-        {/* Animated Border */}
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-300/20 to-amber-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         <CardContent className="relative p-6 flex items-center group">
           {/* Icon Container */}
