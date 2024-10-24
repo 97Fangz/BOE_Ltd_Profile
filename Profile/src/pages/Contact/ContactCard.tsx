@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import {
   Card,
   CardContent,
-  CardDescription,
+
   CardTitle,
 } from "./components/ui/card";
 import {
@@ -13,7 +13,7 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "./components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 
 interface ContactCardProps {
@@ -52,9 +52,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
               <CardTitle className="text-xl font-bold text-white mb-1">
                 {title}
               </CardTitle>
-              <CardDescription className="text-gray-300">
+              <p className="text-gray-300">
                 {description}
-              </CardDescription>
+              </p>
               <div className="mt-2">
                 {content.map((item, idx) => (
                   <p key={idx} className="text-white font-medium">
