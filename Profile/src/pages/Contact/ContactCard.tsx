@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/pages/Contact/components/ui/card';
+import { Button } from '@/pages/Contact/components/ui/button';
 import { Phone, Mail, MapPin, Instagram, User as TikTok } from 'lucide-react';
 
 interface ContactData {
