@@ -1,18 +1,10 @@
+// ContactSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent } from './components/ui/card';
-import { Button } from './components/ui/button';
 import { Phone, Mail, MapPin, Instagram, User as TikTok } from 'lucide-react';
+import ContactCard from './ContactCard';
 
-interface ContactData {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  content: string[];
-  action: string;
-}
-
-const contactData: ContactData[] = [
+const contactData = [
   {
     icon: <Phone size={24} />,
     title: "Phone",
@@ -50,75 +42,75 @@ const contactData: ContactData[] = [
   }
 ];
 
-const ContactCard: React.FC<ContactData> = ({ icon, title, description, content, action }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-    >
-      <Card className="bg-white bg-opacity-80 backdrop-blur-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden rounded-2xl border border-gray-200">
-        <CardContent className="p-6 flex items-center">
-          <div className="mr-6">
-            <div className="text-blue-500 bg-blue-100 p-3 rounded-full">
-              {icon}
-            </div>
-          </div>
-          <div className="flex-grow">
-            <h3 className="font-semibold text-lg text-gray-800 mb-1">{title}</h3>
-            <p className="text-gray-600 text-sm mb-2">{description}</p>
-            {content.map((item, index) => (
-              <p key={index} className="text-blue-600 font-medium">{item}</p>
-            ))}
-          </div>
-          <Button 
-            variant="ghost"
-            onClick={() => window.open(action, '_blank')}
-            className="ml-4"
-          >
-            <motion.div
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              →
-            </motion.div>
-          </Button>
-        </CardContent>
-      </Card>
-    </motion.div>
-  );
-};
-
 const ContactSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-20 px-4 min-h-screen flex items-center justify-center overflow-hidden">
-      <motion.div 
-        className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 w-full max-w-4xl mx-auto"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.h2 
-          className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
-          initial={{ opacity: 0, y: -50 }}
+    <section className="relative py-20 px-4 min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
+        <motion.div 
+          className="absolute inset-0 opacity-10"
+          animate={{
+            backgroundPosition: ["0% 0%", "100% 100%"]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23FFD700' fill-opacity='0.2'/%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
+      
+      {/* Content Container */}
+      <div className="relative w-full max-w-4xl mx-auto">
+        {/* Header */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
         >
-          Get in Touch
-        </motion.h2>
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
+              Get in Touch
+            </span>
+          </h2>
+          <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+            Connect with our expert team for premium gold trading services
+          </p>
+        </motion.div>
+        
+        {/* Contact Cards */}
         <motion.div 
           className="space-y-6"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          initial="hidden"
+          animate="show"
         >
           {contactData.map((card, index) => (
-            <ContactCard key={index} {...card} />
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                show: { opacity: 1, x: 0 }
+              }}
+            >
+              <ContactCard {...card} />
+            </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
