@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Phone, Mail, MapPin, ChevronLeft, ChevronRight, Award, Shield, TrendingUp } from 'lucide-react';
-import CompanyInfo from './pages/components/CompanyInfo';
+import CompanyInfo from './../components/CompanyInfo';
 import History from './components/History';
 
 // Testimonials data remains the same
