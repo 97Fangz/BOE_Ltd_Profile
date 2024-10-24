@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header'; // Update the path to the correct location of the Header component
-import Footer from './pages/Contact/components/Footer';
+import Footer from './components/Footer';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact/Contact';
