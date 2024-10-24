@@ -7,7 +7,7 @@ import {
   CardContent,
   CardDescription,
   CardTitle,
-} from "@/components/ui/card";
+} from "../../components/ui/card";
 import {
   Tooltip,
   TooltipContent,
