@@ -137,12 +137,30 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   width: 280px;
-  background: linear-gradient(135deg, #007791, #005f73);
+  background: linear-gradient(135deg, 
+    rgba(0, 119, 145, 0.95), 
+    rgba(0, 95, 115, 0.95)
+  );
   padding: 2rem 1rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
-  box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px 0 0 24px;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px 0 0 24px;
+    pointer-events: none;
+  }
 
   @media (min-width: 769px) {
     display: none;
@@ -158,17 +176,41 @@ const MobileNavLink = styled(NavLink)`
   margin: 0.5rem 0;
   font-weight: 600;
   transition: all 0.3s ease;
-  border-radius: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
 
   &:hover, &.active {
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transform: translateX(-4px);
   }
 
   svg {
     margin-right: 1rem;
     font-size: 1.4rem;
     color: #ffd700;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
   }
 `;
 
@@ -196,6 +238,22 @@ const Header: React.FC = () => {
     setMobileMenuOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
+  const handleMobileMenuToggle = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <HeaderWrapper>
       <ContentWrapper>
@@ -205,12 +263,24 @@ const Header: React.FC = () => {
             <Title>BOE Limited</Title>
           </LogoContainer>
           <SocialIcons>
-            <SocialIcon href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer"><FaInstagram /></SocialIcon>
-            <SocialIcon href="https://wa.me/+254715119636" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></SocialIcon>
-            <SocialIcon href="https://www.tiktok.com/@boelimited" target="_blank" rel="noopener noreferrer"><FaTiktok /></SocialIcon>
-            <SocialIcon href="https://www.google.com/maps/place/Mali" target="_blank" rel="noopener noreferrer"><FaMapMarkerAlt /></SocialIcon>
-            <SocialIcon href="mailto:boelimited275@gmail.com"><FaEnvelope /></SocialIcon>
-            <SocialIcon href="tel:+254798877813"><FaPhone /></SocialIcon>
+            <SocialIcon href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </SocialIcon>
+            <SocialIcon href="https://wa.me/+254715119636" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp />
+            </SocialIcon>
+            <SocialIcon href="https://www.tiktok.com/@boelimited" target="_blank" rel="noopener noreferrer">
+              <FaTiktok />
+            </SocialIcon>
+            <SocialIcon href="https://www.google.com/maps/place/Mali" target="_blank" rel="noopener noreferrer">
+              <FaMapMarkerAlt />
+            </SocialIcon>
+            <SocialIcon href="mailto:boelimited275@gmail.com">
+              <FaEnvelope />
+            </SocialIcon>
+            <SocialIcon href="tel:+254798877813">
+              <FaPhone />
+            </SocialIcon>
           </SocialIcons>
         </TopBar>
         <NavContainer>
@@ -224,11 +294,14 @@ const Header: React.FC = () => {
               </NavItem>
             ))}
           </NavList>
-          <MobileMenuButton onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle mobile menu">
+          <MobileMenuButton onClick={handleMobileMenuToggle} aria-label="Toggle mobile menu">
             <FaBars />
           </MobileMenuButton>
         </NavContainer>
         <MobileMenu isOpen={mobileMenuOpen}>
+          <CloseButton onClick={handleMobileMenuToggle} aria-label="Close mobile menu">
+            ×
+          </CloseButton>
           {routes.filter(route => route.showInNav).map((route) => (
             <MobileNavLink key={route.path} to={route.path} onClick={() => setMobileMenuOpen(false)}>
               {React.cloneElement(route.icon, { color: '#ffd700' })}

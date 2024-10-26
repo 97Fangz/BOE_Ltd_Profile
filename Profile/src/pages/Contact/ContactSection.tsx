@@ -1,54 +1,124 @@
-// src/pages/Contact/ContactSection.tsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import ContactCard from './ContactCard';
-import { contactData } from './ContactData';
-import ContactForm from './ContactForm';
+import { Card, CardContent } from '../../components/ui/card';
+import { Button } from '../../components/ui/button';
+import { Phone, Mail, MapPin, Instagram, User as TikTok } from 'lucide-react';
+
+interface ContactData {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  content: string[];
+  action: string;
+}
+
+const contactData: ContactData[] = [
+  {
+    icon: <Phone size={24} />,
+    title: "Phone",
+    description: "Reach out directly",
+    content: ["+254798877813", "+254715119636"],
+    action: "tel:+254798877813"
+  },
+  {
+    icon: <Mail size={24} />,
+    title: "Email",
+    description: "Send us a message",
+    content: ["boelimited275@gmail.com"],
+    action: "mailto:boelimited275@gmail.com"
+  },
+  {
+    icon: <MapPin size={24} />,
+    title: "Location",
+    description: "Find us here",
+    content: ["Mali Location", "Kenya Location"],
+    action: "https://www.google.com/maps/place/Mali"
+  },
+  {
+    icon: <Instagram size={24} />,
+    title: "Instagram",
+    description: "Follow our updates",
+    content: ["@boelimited"],
+    action: "https://www.instagram.com/boelimited"
+  },
+  {
+    icon: <TikTok size={24} />,
+    title: "TikTok",
+    description: "Watch our videos",
+    content: ["@boelimited"],
+    action: "https://www.tiktok.com/@boelimited"
+  }
+];
+
+const ContactCard: React.FC<ContactData> = ({ icon, title, description, content, action }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <Card className="bg-white bg-opacity-80 backdrop-blur-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden rounded-2xl border border-gray-200">
+        <CardContent className="p-6 flex items-center">
+          <div className="mr-6">
+            <div className="text-blue-500 bg-blue-100 p-3 rounded-full">
+              {icon}
+            </div>
+          </div>
+          <div className="flex-grow">
+            <h3 className="font-semibold text-lg text-gray-800 mb-1">{title}</h3>
+            <p className="text-gray-600 text-sm mb-2">{description}</p>
+            {content.map((item, index) => (
+              <p key={index} className="text-blue-600 font-medium">{item}</p>
+            ))}
+          </div>
+          <Button 
+            variant="ghost"
+            onClick={() => window.open(action, '_blank')}
+            className="ml-4"
+          >
+            <motion.div
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              →
+            </motion.div>
+          </Button>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+};
 
 const ContactSection: React.FC = () => {
   return (
-    <section className="relative py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+    <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-20 px-4 min-h-screen flex items-center justify-center overflow-hidden">
+      <motion.div 
+        className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 w-full max-w-4xl mx-auto"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
-              Get in Touch
-            </span>
-          </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Choose your preferred way to connect with our expert team
-          </p>
-        </motion.div>
-
-        {/* Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          {contactData.map((contact, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <ContactCard {...contact} />
-            </motion.div>
+          Get in Touch
+        </motion.h2>
+        <motion.div 
+          className="space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          {contactData.map((card, index) => (
+            <ContactCard key={index} {...card} />
           ))}
-        </div>
-
-        {/* Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="max-w-2xl mx-auto"
-        >
-          <ContactForm />
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

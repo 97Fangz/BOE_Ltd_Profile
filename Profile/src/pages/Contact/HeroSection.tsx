@@ -1,63 +1,70 @@
-// src/pages/Contact/HeroSection.tsx
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import styled from 'styled-components';
 
-const HeroSection: React.FC = () => {
-  return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 to-gray-900">
-        <motion.div
-          className="absolute inset-0 opacity-20"
-          animate={{
-            backgroundPosition: ['0px 0px', '100px 100px']
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: 'reverse'
-          }}
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23FFD700' fill-opacity='0.4'/%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}
-        />
-      </div>
+const ContactPageContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+`;
 
-      {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
-              Connect With Expert Gold Traders
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-            Our team of experienced professionals is here to assist you with all your precious metal trading needs.
-            Reach out to us for secure, reliable, and professional service.
-          </p>
+const HeroSectionStyled = styled.div`
+  background-color: #0033A0; // Standard Chartered's primary blue
+  color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-          {/* Scroll Indicator */}
-          <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <ChevronDown className="w-8 h-8 text-amber-400" />
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
+  // Gradient overlay for depth
+  background-image: linear-gradient(
+    135deg,
+    rgba(0, 51, 160, 1) 0%,
+    rgba(0, 76, 240, 1) 100%
   );
-};
+
+  // Add a subtle border
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  // Typography enhancements
+  h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  // Add a hover effect
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const HeroTitle = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+`;
+
+const HeroText = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+`;
+
+const HeroSection: React.FC = () => (
+  <ContactPageContainer>
+    <HeroSectionStyled>
+      <HeroTitle>Contact Us</HeroTitle>
+      <HeroText>
+        If you have any inquiries or need more information about our services, please reach out to us. Our expert brokers in Kenya are here to assist you with all your logistics needs, including the secure shipment of precious metals like gold.
+      </HeroText>
+    </HeroSectionStyled>
+  </ContactPageContainer>
+);
 
 export default HeroSection;
