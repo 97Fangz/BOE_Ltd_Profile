@@ -154,12 +154,11 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   width: 280px;
-  background: transparent;
+  background: linear-gradient(135deg, #007791, #005f73);
   padding: 2rem 1rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px 0 0 24px;
   box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
 
@@ -178,10 +177,10 @@ const MobileNavLink = styled(NavLink)`
   font-weight: 600;
   transition: all 0.3s ease;
   border-radius: 12px;
-  background: rgba(0, 119, 145, 0.3);
+  background: rgba(255, 255, 255, 0.1);
 
   &:hover, &.active {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateX(-4px);
   }
 
