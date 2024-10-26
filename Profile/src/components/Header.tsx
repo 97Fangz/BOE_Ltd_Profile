@@ -131,6 +131,24 @@ const MobileMenuButton = styled.button`
   }
 `;
 
+const MobileMenuOverlay = styled.div<{ isOpen: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: ${props => props.isOpen ? 1 : 0};
+  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  backdrop-filter: blur(3px);
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
 const MobileMenu = styled.div<{ isOpen: boolean }>`
   position: fixed;
   top: 0;
@@ -138,15 +156,15 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   width: 280px;
   background: linear-gradient(135deg, 
-    rgba(0, 119, 145, 0.95), 
-    rgba(0, 95, 115, 0.95)
+    rgba(0, 119, 145, 0.75), 
+    rgba(0, 95, 115, 0.75)
   );
   padding: 2rem 1rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
-  backdrop-filter: blur(8px);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px 0 0 24px;
   box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
 
@@ -177,7 +195,8 @@ const MobileNavLink = styled(NavLink)`
   font-weight: 600;
   transition: all 0.3s ease;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 119, 145, 0.3);
+  backdrop-filter: blur(5px);
 
   &:hover, &.active {
     background: rgba(255, 255, 255, 0.15);
@@ -298,6 +317,7 @@ const Header: React.FC = () => {
             <FaBars />
           </MobileMenuButton>
         </NavContainer>
+        <MobileMenuOverlay isOpen={mobileMenuOpen} onClick={handleMobileMenuToggle} />
         <MobileMenu isOpen={mobileMenuOpen}>
           <CloseButton onClick={handleMobileMenuToggle} aria-label="Close mobile menu">
             ×
