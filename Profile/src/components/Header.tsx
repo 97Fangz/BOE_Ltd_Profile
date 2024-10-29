@@ -73,6 +73,8 @@ const NavContainer = styled.nav`
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
+  backdrop-filter: blur(30px);
+  box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37), border: 2px solid rgba(255, 255, 255, 0.18);
 `;
 
 const NavList = styled.ul`
