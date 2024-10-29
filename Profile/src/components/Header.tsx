@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp, FaTiktok, FaMapMarkerAlt, FaBars, FaEnvelope, 
 import { IoHomeSharp, IoInformationCircle, IoLayersSharp, IoMailSharp, IoWalletSharp, IoFlagSharp } from 'react-icons/io5';
 
 const HeaderWrapper = styled.header`
-  background: linear-gradient(135deg, #007791, #005f73);
+  background: linear-gradient(135deg, #1f3AD1, #1528a0);
   padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
@@ -70,10 +70,10 @@ const SocialIcon = styled.a`
 
 const NavContainer = styled.nav`
   background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
   border-radius: 15px;
   padding: 0.5rem;
   margin-top: 1rem;
-  backdrop-filter: blur(30px);
   box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37), border: 2px solid rgba(255, 255, 255, 0.18);
 `;
 
@@ -156,7 +156,7 @@ const MobileMenu = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   width: 280px;
-  background: linear-gradient(135deg, #007791, #005f73);
+  background: linear-gradient(135deg, #1f3AD1, #1528a0);
   padding: 2rem 1rem;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.3s ease-in-out;
