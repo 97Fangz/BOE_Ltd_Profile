@@ -254,7 +254,7 @@ const Header: React.FC = () => {
             <SocialIcon href="https://www.google.com/maps/place/Mali" target="_blank" rel="noopener noreferrer">
               <FaMapMarkerAlt />
             </SocialIcon>
-            <SocialIcon href="mailto:boelimited275@gmail.com">
+            <SocialIcon href="mailto:boeltdcompany@gmail.com">
               <FaEnvelope />
             </SocialIcon>
             <SocialIcon href="tel:+254798877813">
