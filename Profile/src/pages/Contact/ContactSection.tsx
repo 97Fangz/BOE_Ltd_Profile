@@ -34,8 +34,8 @@ const contactData: ContactData[] = [
     icon: <Mail size={24} />,
     title: "Email",
     description: "Send us a message",
-    content: ["boelimited275@gmail.com"],
-    action: "mailto:boelimited275@gmail.com",
+    content: ["boeltdcompany@gmail.com"],
+    action: "mailto:boeltdcompany@gmail.com",
     isFullWidth: true
   },
   {
