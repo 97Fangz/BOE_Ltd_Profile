@@ -112,6 +112,7 @@ const AchievementsSection = () => (
   </SectionWrapper>
 );
 
+/*
 const TeamSection = () => (
   <SectionWrapper 
     title="Management Team" 
@@ -134,6 +135,7 @@ const TeamSection = () => (
     </div>
   </SectionWrapper>
 );
+*/
 
 const DownloadSection = () => (
   <div className="bg-blue-50 p-8 rounded-lg shadow-lg text-center mb-8">
@@ -161,7 +163,7 @@ const AboutPage = () => {
         <ServicesSection />
         <GallerySection />
         <AchievementsSection />
-        <TeamSection />
+        {/* <TeamSection /> */}
         <DownloadSection />
       </div>
     </div>
