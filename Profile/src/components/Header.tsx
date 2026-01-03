@@ -239,7 +239,7 @@ const Header: React.FC = () => {
         <TopBar>
           <LogoContainer>
             <Logo src="/Boelogo.jpeg" alt="BOE Logo" />
-            <Title>BOE Limited</Title>
+            <Title>BOE MINERALS</Title>
           </LogoContainer>
           <SocialIcons>
             <SocialIcon href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer">

@@ -7,21 +7,21 @@ import History from './../components/History';
 // Testimonials data remains the same
 const testimonials = [
   {
-    text: "BOE Limited's gold trading expertise has been instrumental in our investment success. Their market analysis and execution are impeccable.",
+    text: "BOE Minerals's gold trading expertise has been instrumental in our investment success. Their market analysis and execution are impeccable.",
     author: "Michael Chen",
     position: "Investment Director, Global Assets Ltd",
     rating: 5,
     image: "/Michael.jpg"
   },
   {
-    text: "The level of professionalism and expertise in gold trading at BOE Limited is outstanding. Their commitment to security and transparency sets them apart.",
+    text: "The level of professionalism and expertise in gold trading at BOE Minerals is outstanding. Their commitment to security and transparency sets them apart.",
     author: "Sarah Williams",
     position: "Portfolio Manager, Heritage Investments",
     rating: 5,
     image: "/Sarrah.jpg"
   },
   {
-    text: "Working with BOE Limited for our gold investments has been a game-changer. Their market insights and execution are consistently excellent.",
+    text: "Working with BOE Minerals for our gold investments has been a game-changer. Their market insights and execution are consistently excellent.",
     author: "Robert Martinez",
     position: "CEO, Premium Metals Trading",
     rating: 5,
@@ -205,64 +205,242 @@ const GoldServices = () => (
 );
 
 const WhyChooseUs = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
-    <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl shadow-lg">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">Why Choose BOE Limited?</h3>
-      <ul className="space-y-4">
-        {[
-          "Dedicated team of market experts",
-          "Secure and transparent transactions",
-          "Competitive rates and flexible investment options",
-          "24/7 customer support",
-          "Global market access",
-          "Comprehensive market analysis",
-          "Regulatory compliance assured"
-        ].map((item, index) => (
-          <li key={index} className="flex items-center">
-            <svg className="w-5 h-5 text-amber-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-            <span className="text-gray-700">{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-8 rounded-xl shadow-lg">
-      <img src="/Boelogo.jpeg" alt="Gold trading" className="w-full rounded-lg mb-6" />
-      <p className="text-gray-700 leading-relaxed">
-        At BOE Limited, we combine years of expertise with cutting-edge technology to provide you with the best gold trading experience. Our commitment to excellence, transparency, and customer satisfaction has made us a trusted name in the industry.
-      </p>
+  <div className="my-16 relative">
+    {/* Background decorative elements */}
+    <div className="absolute inset-0 bg-gradient-to-br from-amber-100/20 via-transparent to-amber-100/20 rounded-3xl"></div>
+    
+    <div className="relative max-w-6xl mx-auto">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <div className="inline-block mb-4">
+          <span className="px-4 py-2 bg-amber-100 text-amber-800 text-sm font-semibold rounded-full">
+            Our Commitment
+          </span>
+        </div>
+        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          Why BOE Minerals
+        </h2>
+        <div className="flex items-center justify-center">
+          <div className="h-1 w-24 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+        </div>
+      </div>
+
+      {/* Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left Side - Key Points */}
+        <div className="space-y-6">
+          {[
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              ),
+              title: "Premium African Gold",
+              description: "Responsibly sourced from the finest deposits across the continent"
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              ),
+              title: "Absolute Traceability",
+              description: "Complete transparency from source to delivery with verified documentation"
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              ),
+              title: "International Standards",
+              description: "Documentation that meets global compliance and certification requirements"
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              ),
+              title: "Secure & Insured Delivery",
+              description: "Discreet shipping with comprehensive insurance and tracking"
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              ),
+              title: "Relationship-Driven",
+              description: "Built on trust, integrity, and long-term partnership commitments"
+            }
+          ].map((item, index) => (
+            <div 
+              key={index} 
+              className="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-amber-100 hover:border-amber-300"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right Side - Visual Element */}
+        <div className="relative lg:pl-8">
+          <div className="relative">
+            {/* Decorative background card */}
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-amber-600 rounded-3xl transform rotate-3 opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-tl from-amber-300 to-amber-500 rounded-3xl transform -rotate-3 opacity-20"></div>
+            
+            {/* Main card */}
+            <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
+              <div className="aspect-square">
+                <img 
+                  src="/Boelogo.jpeg" 
+                  alt="BOE Minerals - Premium African Gold" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Overlay text */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-8">
+                <p className="text-white text-lg leading-relaxed">
+                  At BOE Minerals, we don't just trade gold—we build lasting relationships founded on integrity, transparency, and excellence.
+                </p>
+                <div className="mt-4 flex items-center space-x-2">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-amber-400 border-2 border-white"></div>
+                    ))}
+                  </div>
+                  <span className="text-amber-200 text-sm font-medium">Trusted by leading investors worldwide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Floating stats cards */}
+          <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4 border border-amber-200 hidden lg:block">
+            <div className="text-3xl font-bold text-amber-600">99.9%</div>
+            <div className="text-sm text-gray-600">Gold Purity</div>
+          </div>
+          
+          <div className="absolute -top-6 -right-6 bg-white rounded-xl shadow-lg p-4 border border-amber-200 hidden lg:block">
+            <div className="text-3xl font-bold text-amber-600">100%</div>
+            <div className="text-sm text-gray-600">Traceable</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 );
+
+const BrandStatement = () => (
+  <section className="max-w-5xl mx-auto my-16 relative">
+    {/* Decorative background elements */}
+    <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-white to-amber-50 rounded-2xl transform -rotate-1"></div>
+    <div className="absolute inset-0 bg-gradient-to-tl from-amber-50 via-white to-amber-100 rounded-2xl transform rotate-1"></div>
+    
+    {/* Main content card */}
+    <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
+      {/* Gold accent bar */}
+      <div className="h-2 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600"></div>
+      
+      <div className="p-8 sm:p-12">
+        {/* Header with icon */}
+        <div className="flex items-center justify-center mb-6">
+          <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-4 rounded-full">
+            <svg className="w-8 h-8 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Small label */}
+        <div className="text-center mb-3">
+          <span className="inline-block px-4 py-1 bg-amber-100 text-amber-800 text-sm font-semibold rounded-full">
+            Brand Statement
+          </span>
+        </div>
+
+        {/* Main heading */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-6">
+          The BOE Standard
+        </h2>
+
+        {/* Divider */}
+        <div className="flex items-center justify-center mb-6">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+          <div className="mx-3 w-2 h-2 rounded-full bg-amber-400"></div>
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+        </div>
+
+        {/* Main content */}
+        <div className="max-w-3xl mx-auto space-y-4 text-center">
+          <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+            At BOE Minerals, <span className="font-semibold text-amber-700">Best of Earth</span> is not a slogan, it is our operating principle.
+          </p>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            We represent Africa's finest gold through disciplined sourcing, verified certification, and globally compliant delivery. Every transaction reflects clarity, security, and confidence.
+          </p>
+        </div>
+
+        {/* Bottom decorative elements */}
+        <div className="mt-8 flex justify-center space-x-2">
+          <div className="w-2 h-2 rounded-full bg-amber-400"></div>
+          <div className="w-2 h-2 rounded-full bg-amber-300"></div>
+          <div className="w-2 h-2 rounded-full bg-amber-200"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 via-white to-amber-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <section className="relative bg-gradient-to-r from-amber-700 to-amber-900 text-white py-24 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg mb-16 overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-black opacity-50" />
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-amber-900/30" />
-          </div>
-          <div className="relative max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
-              Premium <span className="text-amber-400">Gold Trading</span> Solutions
-            </h1>
-            <p className="text-xl md:text-2xl font-medium mb-10">
-              Your trusted partner in global gold trading and investment excellence
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/contact" className="px-8 py-3 bg-amber-400 text-gray-900 font-semibold rounded-lg hover:bg-amber-300 transition duration-300">
-                Buy Now
-              </Link>
-              <Link to="/about" className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition duration-300">
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </section>
+      <section className="relative bg-gradient-to-r from-amber-700 to-amber-900 text-white py-24 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg mb-16 overflow-hidden">
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-black opacity-50" />
+    <div className="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-amber-900/30" />
+  </div>
+  <div className="relative max-w-4xl mx-auto text-center">
+    <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
+      Best of Earth. <span className="text-amber-400">Pure Value. Trusted Origins.</span>
+    </h1>
+    <p className="text-xl md:text-2xl font-medium mb-10">
+      Exceptional African gold, responsibly sourced and delivered to global markets with discretion, precision, and integrity.
+    </p>
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <Link to="/contact" className="px-8 py-3 bg-amber-400 text-gray-900 font-semibold rounded-lg hover:bg-amber-300 transition duration-300">
+        Buy Now
+      </Link>
+      <Link to="/about" className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition duration-300">
+        Learn More
+      </Link>
+    </div>
+  </div>
+</section>
 
+        <BrandStatement />
         <StatsSection />
 
         <SectionWrapper title="Our Services" icon={ChevronDown}>

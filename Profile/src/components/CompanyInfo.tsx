@@ -54,12 +54,12 @@ const Highlight = styled.span`
 const CompanyInfo: React.FC = () => {
   return (
     <Section>
- <Title>About BOE Limited</Title>
+ <Title>About BOE Minerals</Title>
  <Text>
-   BOE Limited is a specialized company focused on <Highlight>gold trading</Highlight>, offering comprehensive solutions in the precious metals market. We ensure secure and reliable transactions while maintaining the highest standards of business practices.
+   BOE Minerals is a specialized company focused on <Highlight>gold trading</Highlight>, offering comprehensive solutions in the precious metals market. We ensure secure and reliable transactions while maintaining the highest standards of business practices.
  </Text>
  <Text>
-   Headquartered in <Highlight>Kenya</Highlight>, BOE Limited has established itself as a trusted name in the <Highlight>gold</Highlight> trade sector. Our extended logistics arm, <Highlight>Fastisha Logistics</Highlight>, provides comprehensive transport solutions, ensuring secure and timely delivery services worldwide. Through our integrated approach to gold trading and logistics, we create lasting value while fostering economic growth in the regions we serve.
+   Headquartered in <Highlight>Kenya</Highlight>, BOE Minerals has established itself as a trusted name in the <Highlight>gold</Highlight> trade sector. Our extended logistics arm, <Highlight>Fastisha Logistics</Highlight>, provides comprehensive transport solutions, ensuring secure and timely delivery services worldwide. Through our integrated approach to gold trading and logistics, we create lasting value while fostering economic growth in the regions we serve.
  </Text>
 </Section>
   );

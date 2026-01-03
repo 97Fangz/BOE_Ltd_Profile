@@ -46,10 +46,10 @@ const HeroSection = () => (
     </div>
     <div className="relative max-w-4xl mx-auto text-center">
       <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl md:text-7xl mb-6">
-        About <span className="text-yellow-400">BOE Limited</span>
+        About <span className="text-yellow-400">BOE Minerals</span>
       </h1>
       <p className="text-xl md:text-2xl font-medium mb-10">
-        Discover our story, mission, and the people behind our success in mineral mining and selling.
+        Delivering the Best of Earth: Exceptional-purity African gold to global markets with unmatched trust and transparency.
       </p>
     </div>
   </section>
@@ -57,34 +57,132 @@ const HeroSection = () => (
 
 const AboutSection = () => (
   <SectionWrapper 
-    title="About the Company" 
+    title="About Us" 
     icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>}
   >
-    <p className="text-lg text-gray-700">
-      BOE Limited is a premier mineral mining and selling company founded by Joel Chesiro in 2023. Specializing in gold, diamonds, gemstones, and other minerals, we are a trusted source for high-quality minerals.
-    </p>
+    <div className="space-y-4">
+      <p className="text-lg text-gray-700 leading-relaxed">
+        Africa holds some of the world's most valuable mineral resources. BOE Minerals exists to present that value responsibly to the global market.
+      </p>
+      <p className="text-lg text-gray-700 leading-relaxed">
+        We work with vetted producers and partners to source high-purity gold that meets international standards. Our role is to ensure authenticity at origin, precision in documentation, and certainty at delivery.
+      </p>
+      <p className="text-lg text-gray-700 leading-relaxed">
+        Our clients include refiners, institutional buyers, and high-net-worth individuals who require reliability, discretion, and long-term partnership.
+      </p>
+    </div>
   </SectionWrapper>
 );
 
-const HistorySection = () => (
+const VisionSection = () => (
   <SectionWrapper 
-    title="Brief History" 
-    icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" /></svg>}
+    title="Our Vision" 
+    icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/></svg>}
   >
-    <p className="text-lg text-gray-700">
-      Founded in 2023 by Joel Chesiro, BOE Limited has quickly established itself as a leading provider of high-quality minerals. Known for our commitment to excellence and integrity, we strive to offer the best products and services to our clients.
+    <p className="text-lg text-gray-700 leading-relaxed italic">
+      To define Africa's position in the global precious metals market by delivering the Best of Earth with unmatched trust, transparency, and international credibility.
     </p>
   </SectionWrapper>
 );
 
-const ServicesSection = () => (
+const MissionSection = () => (
   <SectionWrapper 
-    title="Our Services" 
+    title="Our Mission" 
     icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" /></svg>}
   >
-    <p className="text-lg text-gray-700">
-      We provide a comprehensive range of services including the mining and sale of gold, diamonds, gemstones, and other minerals. Our consulting services help clients maximize the value of their mineral assets.
-    </p>
+    <div className="space-y-4">
+      <p className="text-lg text-gray-700 leading-relaxed">
+        To source, certify, and supply exceptional-purity African gold to global markets through:
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border-l-4 border-blue-600">
+          <h4 className="font-semibold text-blue-800 mb-2">Ethical and Responsible Sourcing</h4>
+          <p className="text-gray-700 text-sm">Working with vetted producers who meet international standards</p>
+        </div>
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border-l-4 border-blue-600">
+          <h4 className="font-semibold text-blue-800 mb-2">International-Grade Certification</h4>
+          <p className="text-gray-700 text-sm">Ensuring authenticity and precision in documentation</p>
+        </div>
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border-l-4 border-blue-600">
+          <h4 className="font-semibold text-blue-800 mb-2">Transparent Pricing</h4>
+          <p className="text-gray-700 text-sm">Benchmark-aligned pricing for fair market value</p>
+        </div>
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border-l-4 border-blue-600">
+          <h4 className="font-semibold text-blue-800 mb-2">Secure Logistics</h4>
+          <p className="text-gray-700 text-sm">Insured and confidential delivery with certainty</p>
+        </div>
+      </div>
+      <p className="text-lg text-gray-700 leading-relaxed mt-4">
+        Long-term partnerships built on performance and trust.
+      </p>
+    </div>
+  </SectionWrapper>
+);
+
+const GoldPortfolioSection = () => (
+  <SectionWrapper 
+    title="Gold Portfolio" 
+    icon={() => <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clipRule="evenodd" /></svg>}
+  >
+    <div className="bg-gradient-to-br from-yellow-50 via-amber-50 to-yellow-100 p-6 rounded-xl border-2 border-yellow-400">
+      <h3 className="text-2xl font-bold text-amber-900 mb-6 text-center">Refined Excellence</h3>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-5 rounded-lg shadow-md border-l-4 border-yellow-500">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+              <span className="text-yellow-700 font-bold text-lg">✓</span>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800 mb-1">Purity</h4>
+              <p className="text-gray-700">97%+ (22–24 carats)</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow-md border-l-4 border-yellow-500">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+              <span className="text-yellow-700 font-bold text-lg">✓</span>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800 mb-1">Format</h4>
+              <p className="text-gray-700">Investment-grade gold bars (1kg standard)</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow-md border-l-4 border-yellow-500">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+              <span className="text-yellow-700 font-bold text-lg">✓</span>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800 mb-1">Certification</h4>
+              <p className="text-gray-700">Assay reports and export documentation</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white p-5 rounded-lg shadow-md border-l-4 border-yellow-500">
+          <div className="flex items-start space-x-3">
+            <div className="flex-shrink-0 w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+              <span className="text-yellow-700 font-bold text-lg">✓</span>
+            </div>
+            <div>
+              <h4 className="font-bold text-gray-800 mb-1">Presentation</h4>
+              <p className="text-gray-700">Secure, tamper-evident packaging</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 bg-white p-4 rounded-lg border-2 border-amber-300">
+        <p className="text-gray-700 text-center text-sm leading-relaxed">
+          <span className="font-semibold text-amber-900">Quality Assurance:</span> All gold is verified prior to export and may be re-tested at the buyer's selected refinery or laboratory.
+        </p>
+      </div>
+    </div>
   </SectionWrapper>
 );
 
@@ -157,8 +255,9 @@ const AboutPage = () => {
       <div className="max-w-7xl mx-auto">
         <HeroSection />
         <AboutSection />
-        <HistorySection />
-        <ServicesSection />
+        <VisionSection />
+        <MissionSection />
+        <GoldPortfolioSection />
         <GallerySection />
         <AchievementsSection />
         {/* <TeamSection /> */}
