@@ -34,31 +34,31 @@ const contactData: ContactData[] = [
     icon: <Mail size={24} />,
     title: "Email",
     description: "Send us a message",
-    content: ["boeltdcompany@gmail.com"],
-    action: "mailto:boeltdcompany@gmail.com",
+    content: ["info@boeminerals.com"],
+    action: "mailto:info@boeminerals.com",
     isFullWidth: true
   },
   {
     icon: <MapPin size={24} />,
     title: "Location",
     description: "Find us here",
-    content: ["Nairobi, Kenya", "Bamako, Mali"],
-    action: "https://www.google.com/maps/place/Nairobi,+Kenya/@-1.2920659,36.821946,10z",
+    content: ["Nairobi, Kenya"],
+    action: "https://maps.app.goo.gl/kfSSJWtnUakpqa3E6",
     isFullWidth: true
   },
   {
     icon: <Instagram size={24} />,
     title: "Instagram",
     description: "Follow our updates",
-    content: ["@boelimited"],
-    action: "https://www.instagram.com/boelimited"
+    content: ["@_swiftport"],
+    action: "https://www.instagram.com/_swiftport"
   },
   {
     icon: <TbBrandTiktok size={24} />,
     title: "TikTok",
     description: "Watch our videos",
-    content: ["@boelimited"],
-    action: "https://www.tiktok.com/@boelimited"
+    content: ["@boeminerals"],
+    action: "https://www.tiktok.com/@boeminerals"
   }
 ];
 

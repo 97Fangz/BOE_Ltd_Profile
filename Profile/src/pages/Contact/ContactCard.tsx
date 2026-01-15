@@ -23,22 +23,22 @@ const contactData: ContactData[] = [
     icon: <Mail size={24} />,
     title: "Email",
     description: "Send us a message",
-    content: ["boelimited275@gmail.com"],
-    action: "mailto:boelimited275@gmail.com"
+    content: ["info@boeminerals.com"],
+    action: "mailto:info@boeminerals.com"
   },
   {
     icon: <MapPin size={24} />,
     title: "Location",
     description: "Find us here",
     content: ["Mali Location", "Kenya Location"],
-    action: "https://www.google.com/maps/place/Mali"
+    action: "https://maps.app.goo.gl/G9GuETyVU6bLS8wU9"
   },
   {
     icon: <Instagram size={24} />,
     title: "Instagram",
     description: "Follow our updates",
     content: ["@boelimited"],
-    action: "https://www.instagram.com/boelimited"
+    action: "https://www.instagram.com/_swiftport"
   },
   {
     icon: <TikTok size={24} />,

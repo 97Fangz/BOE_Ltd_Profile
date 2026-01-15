@@ -137,7 +137,8 @@ const Footer: React.FC = () => {
             a legally registered and compliant entity operating under applicable 
             Kenyan and international regulations.
           </LegalText>
-          <Tagline>BOE Minerals — Best of Earth.</Tagline>
+          <Tagline>BOE Minerals </Tagline>
+          <Tagline>Best of Earth</Tagline>
         </FooterSection>
 
         {/* Contact Information */}
@@ -168,7 +169,7 @@ const Footer: React.FC = () => {
           <SectionTitle>Connect With Us</SectionTitle>
           <LegalText>Follow us on social media for updates and insights.</LegalText>
           <SocialLinks>
-            <SocialIcon href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <SocialIcon href="https://www.instagram.com/_swiftport" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Instagram size={20} />
             </SocialIcon>
             <SocialIcon href="https://linkedin.com/company/boeminerals" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

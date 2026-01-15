@@ -242,19 +242,19 @@ const Header: React.FC = () => {
             <Title>BOE MINERALS</Title>
           </LogoContainer>
           <SocialIcons>
-            <SocialIcon href="https://www.instagram.com/boelimited" target="_blank" rel="noopener noreferrer">
+            <SocialIcon href="https://www.instagram.com/_swiftport" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </SocialIcon>
             <SocialIcon href="https://wa.me/+254715119636" target="_blank" rel="noopener noreferrer">
               <FaWhatsapp />
             </SocialIcon>
-            <SocialIcon href="https://www.tiktok.com/@boelimited" target="_blank" rel="noopener noreferrer">
+            <SocialIcon href="https://www.tiktok.com/@boeminerals" target="_blank" rel="noopener noreferrer">
               <FaTiktok />
             </SocialIcon>
-            <SocialIcon href="https://www.google.com/maps/place/Mali" target="_blank" rel="noopener noreferrer">
+            <SocialIcon href="https://maps.app.goo.gl/kfSSJWtnUakpqa3E6" target="_blank" rel="noopener noreferrer">
               <FaMapMarkerAlt />
             </SocialIcon>
-            <SocialIcon href="mailto:boeltdcompany@gmail.com">
+            <SocialIcon href="mailto:info@boeminerals.com">
               <FaEnvelope />
             </SocialIcon>
             <SocialIcon href="tel:+254798877813">
