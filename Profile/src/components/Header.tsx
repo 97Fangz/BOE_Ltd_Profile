@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp, FaTiktok, FaMapMarkerAlt, FaBars, FaEnvelope, 
 import { IoHomeSharp, IoInformationCircle, IoLayersSharp, IoMailSharp, IoWalletSharp, IoFlagSharp } from 'react-icons/io5';
 
 const HeaderWrapper = styled.header`
-  background: linear-gradient(135deg, #1f3AD1, #1528a0);
+  background: linear-gradient(135deg,rgb(24, 4, 110),rgb(8, 21, 105));
   padding: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 20px;

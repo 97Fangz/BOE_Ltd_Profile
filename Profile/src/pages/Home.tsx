@@ -299,13 +299,26 @@ const Home = () => {
               Exceptional African gold, responsibly sourced and delivered to global markets with discretion, precision, and integrity.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
-              <button className="px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center shadow-lg">
-                Start Trading
-                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
-              </button>
-              <button className="px-6 md:px-8 py-3 md:py-4 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition duration-300 shadow-lg">
-                Learn More
-              </button>
+            <a
+  href="https://wa.me/254715119636"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center shadow-lg">
+    Start Trading
+    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+  </button>
+</a>
+
+<a
+  href="https://www.tiktok.com/@boeminerals"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="px-6 md:px-8 py-3 md:py-4 bg-white text-blue-900 font-semibold rounded-lg hover:bg-blue-50 transition duration-300 shadow-lg">
+    Learn More
+  </button>
+</a>
             </div>
           </div>
         </div>
